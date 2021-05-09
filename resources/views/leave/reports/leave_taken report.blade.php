@@ -25,11 +25,11 @@
 								<table id="example2" class="table table-bordered table-hover">
 									<thead>
 										<tr>
-											<th>Employee Number </th>
-											<th>Employee Name </th>
-											<th>Leave Type</th>
-											<th>Date taken</th>
-											<th>Day(s)</th>
+											<th>Numéro d'employé</th>
+											<th>Nom de l'employé</th>	
+											<th>Type de congé</th>
+											<th>Date prise</th>
+											<th>Jour(s)</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -47,18 +47,18 @@
 									</tbody>
 									<tfoot>
 										<tr>
-											<th>Employee Number </th>
-											<th>Employee Name </th>
-											<th>Leave Type</th>
-											<th>Date taken</th>
-											<th>Day(s)</th>
+											<th>Numéro d'employé</th>
+											<th>Nom de l'employé</th>	
+											<th>Type de congé</th>
+											<th>Date prise</th>
+											<th>Jour(s)</th>
 										</tr>
 									</tfoot>
 								</table>
 								<div class="row no-print">
 									<div class="col-xs-12">
-									<button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back</button>
-										<button type="submit" id="print" class="btn btn-primary pull-right"><i class="fa fa-print"></i>Print report</button>
+									<button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retourner</button>
+										<button type="submit" id="print" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Imprimer</button>
 										 <!-- <button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Cancel</button> -->
 									</div>
 								</div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Leave Balance Report Printed By {{ $user->person->first_name.' '. $user->person->surname }}</title>
+  <title>Rapport de congés restant imprimé par {{ $user->person->first_name.' '. $user->person->surname }}</title>
  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -46,10 +46,10 @@
 			<div class="box-body">
 				<table class="table table-striped">
 					<tr>
-					<th>Employee Number </th>
-					<th>Employee Name </th>
-					<th>Leave Type</th>
-					<th>Balance</th>
+						<th>Numéro d'employé</th>
+						<th>Nom de l'employé</th>
+						<th>Type de congé</th>
+						<th>Solde</th>
 					</tr>
 					@if(count($credit) > 0)
 							@foreach($credit as $audit)

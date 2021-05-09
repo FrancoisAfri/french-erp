@@ -8,7 +8,7 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Leave History Report</h3>
+                    <h3 class="box-title">Rapport D'historique</h3>
                 </div>
                 <!-- /.box-header -->
 				<form class="form-horizontal" method="POST" action="/leave/print">
@@ -24,15 +24,15 @@
 						<table id="example2" class="table table-bordered table-hover">
 							<thead>
 								<tr>
-									<th>Employee Number </th>
-									<th>Names</th>
+									<th>Numéro d'employé</th>
+									<th>Nom de l'employé</th>
 									<th>Action</th>
-									<th>Action Date</th>
-									<th>Leave Type</th>
-									<th>Previous Balance</th>
+									<th>Date de l'action</th>
+									<th>Type de congé</th>
+									<th>Solde précédent</th>
 									<th>Transaction</th>
-									<th>Current Balance</th>
-									<th>Performed By</th>
+									<th>Solde actuel</th>
+									<th>Exécuté par</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -54,22 +54,22 @@
 							</tbody>
 							<tfoot>
 								<tr>
-									<th>Employee Number </th>
-									<th>Names</th>
+									<th>Numéro d'employé</th>
+									<th>Nom de l'employé</th>
 									<th>Action</th>
-									<th>Action Date</th>
-									<th>Leave Type</th>
-									<th>Previous Balance</th>
+									<th>Date de l'action</th>
+									<th>Type de congé</th>
+									<th>Solde précédent</th>
 									<th>Transaction</th>
-									<th>Current Balance</th>
-									<th>Performed By</th>
+									<th>Solde actuel</th>
+									<th>Exécuté par</th>
 								</tr>
 							</tfoot>
 						</table>
 						<div class="row no-print">
 							<div class="col-xs-12">
-							<button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back</button>
-								<button type="submit" id="print" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print report</button>
+							<button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retourner</button>
+								<button type="submit" id="print" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Imprimer</button>
 								 <!-- <button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Cancel</button> -->
 							</div>
 						</div>

@@ -8,7 +8,7 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Cancelled Leave Applications Report</h3>
+                    <h3 class="box-title">Rapport sur les demandes de congé annulées</h3>
                 </div>
                 <!-- /.box-header -->
                 <form class="form-horizontal" method="POST" action="/leave/reports/cancelled-leaves/print" target="_blank">
@@ -24,13 +24,13 @@
                                 <thead>
 									<tr>
 										<th class="text-center" width="5px">#</th>
-										<th>Employee Number</th>
-										<th>Employee Name</th>
-										<th>Leave Type</th>
-										<th>Start Date</th>
-										<th>End Date</th>
-										<th>Cancelled By</th>
-										<th>Cancellation Reason</th>
+										<th>Numéro d'employé</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Date de début</th>
+										<th>Date de fin</th>
+										<th>Annulé par</th>
+										<th>Raison de l'annulation</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -50,20 +50,20 @@
 								<tfoot>
 									<tr>
 										<th class="text-center" width="5px">#</th>
-										<th>Employee Number</th>
-										<th>Employee Name</th>
-										<th>Leave Type</th>
-										<th>Start Date</th>
-										<th>End Date</th>
-										<th>Cancelled By</th>
-										<th>Cancellation Reason</th>
+										<th>Numéro d'employé</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Date de début</th>
+										<th>Date de fin</th>
+										<th>Annulé par</th>
+										<th>Raison de l'annulation</th>
 									</tr>
 								</tfoot>
                             </table>
                             <div class="row no-print">
                                 <div class="col-xs-12">
-                                    <a href="/leave/reports" id="cancel" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back</a>
-                                    <button type="submit" id="cancel" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</button>
+                                    <a href="/leave/reports" id="cancel" class="btn btn-default"><i class="fa fa-arrow-left"></i> Retourner</a>
+                                    <button type="submit" id="cancel" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Imprimer</button>
                                 </div>
                             </div>
                             <!-- End amortization /table -->

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Leave History Report Printed By {{ $name.' '. $surname }}</title>
+  <title>History Report Printed By {{ $name.' '. $surname }}</title>
  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -53,14 +53,14 @@
 			<div class="box-body">
 				<table class="table table-striped">
 					<tr>
-						        <th>Employee Number</th>
-                    <th>User</th>
+					<th>Numéro d'employé</th>
+                    <th>Nom de l'employé</th>
                     <th>Action</th>
-                    <th>Action Date</th>
-                    <th>Previous Balance</th>
-                    <th>Transaction</th>
-                    <th>Current Balance</th>
-                    <th>Leave Type</th>
+                    <th>Date de l'action</th>
+                    <th>Solde précédent</th>
+					<th>Transaction</th>
+					<th>Solde actuel</th>
+                    <th>Type de congé</th>
 					</tr>
 					@if(count($historyAudit) > 0)
                     @foreach($historyAudit as $audit)

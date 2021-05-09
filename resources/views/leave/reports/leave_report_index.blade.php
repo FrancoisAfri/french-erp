@@ -26,8 +26,8 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <i class="fa fa-anchor pull-right"></i>
-                    <h3 class="box-title">Leave Reports Search criteria</h3>
-                    <p>Enter search details:</p>
+                    <h3 class="box-title">Rapports Critères de recherche</h3>
+                    <p>Entrez les détails de la recherche:</p>
                 </div>
                 <form name="leave-application-form" class="form-horizontal" method="POST" action=" " enctype="multipart/form-data">
                     {{ csrf_field() }}
@@ -44,24 +44,24 @@
                             </div>
                         @endif
                             <div class="form-group{{ $errors->has('application_type') ? ' has-error' : '' }}">
-                                <label for="application_type" class="col-sm-2 control-label"> Report Type</label>
+                                <label for="application_type" class="col-sm-2 control-label"> Type de rapport</label>
                                 <div class="col-sm-9">
-                                    <label class="radio-inline" style="padding-left: 0px;"><input type="radio" id="rdo_levTkn" name="application_type" value="1" checked> Leave Taken </label>
-                                    <label class="radio-inline"><input type="radio" id="rdo_bal" name="application_type" value="2">  Leave Balance</label>
-                                    <label class="radio-inline"><input type="radio" id="rdo_all" name="application_type" value="4">  Leave Allowance</label>
-                                    <label class="radio-inline"><input type="radio" id="rdo_levH" name="application_type" value="5">  Leave History</label>
-                                    <label class="radio-inline"><input type="radio" id="rdo_cancelled_leaves" name="application_type" value="6"> Cancelled Leaves</label>
+                                    <label class="radio-inline" style="padding-left: 0px;"><input type="radio" id="rdo_levTkn" name="application_type" value="1" checked> Congés pris </label>
+                                    <label class="radio-inline"><input type="radio" id="rdo_bal" name="application_type" value="2">  Congés Restant</label>
+                                    <label class="radio-inline"><input type="radio" id="rdo_all" name="application_type" value="4">   Allocation de Congés</label>
+                                    <label class="radio-inline"><input type="radio" id="rdo_levH" name="application_type" value="5">  Histoirique de Congés</label>
+                                    <label class="radio-inline"><input type="radio" id="rdo_cancelled_leaves" name="application_type" value="6"> Congés annulées</label>
                                 </div>
                             </div>
                           <div class="form-group {{ $errors->has('hr_person_id') ? ' has-error' : '' }}">
-                            <label for="hr_person_id" class="col-sm-2 control-label">Employee</label>
+                            <label for="hr_person_id" class="col-sm-2 control-label">Employé</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-user-circle"></i>
                                     </div>
                                     <select class="form-control select2" style="width: 100%;" id="hr_person_id" name="hr_person_id">
-                                        <option value="">*** Select an Employee ***</option>
+                                        <option value="">*** Sélectionnez un employé ***</option>
                                         @foreach($employees as $employee)
                                             <option value="{{ $employee->id }}">{{ $employee->first_name . ' ' . $employee->surname }}</option>
                                         @endforeach
@@ -70,27 +70,27 @@
                             </div>
                         </div>
                         <div class="form-group levAction-field {{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                                <label for="leave_types_id" class="col-sm-2 control-label">Leave Action</label>
+                                <label for="leave_types_id" class="col-sm-2 control-label">Action</label>
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <div class="input-group-addon">
                                             <i class="fa fa-user"></i>
                                         </div>
                                         
-                                             <input type="text" class="form-control" id="action" name="action" placeholder="Enter an Action...">
+                                             <input type="text" class="form-control" id="action" name="action" placeholder="Entrez une action...">
                                       
                                     </div>
                                 </div>
                             </div>                                        
                         <div class="form-group lev-field{{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                            <label for="leave_types_id" class="col-sm-2 control-label">Leave Type</label>
+                            <label for="leave_types_id" class="col-sm-2 control-label">Type de congé</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-user"></i>
                                     </div>
                                     <select id="leave_types_id" name="leave_types_id" class="form-control select2" style="width: 100%;">
-                                    <option value="">*** Select a Leave Type ***</option>
+                                    <option value="">*** Sélectionnez un type de congé ***</option>
                                         @foreach($leaveTypes as $leaveType)
                                             <option value="{{ $leaveType->id }}">{{ $leaveType->name }}</option>
                                         @endforeach
@@ -99,36 +99,19 @@
                             </div>
                         </div>
 						<div class="form-group date-field {{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                            <label for="days" class="col-sm-2 control-label">Action Date</label>
+                            <label for="days" class="col-sm-2 control-label">Date de l'action</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-										<input type="text" class="form-control daterangepicker" id="action_date" name="action_date" value="" placeholder="Select Action Date...">
+										<input type="text" class="form-control daterangepicker" id="action_date" name="action_date" value="" placeholder="Sélectionnez la date de l'action...">
                                 </div>
                             </div>
                         </div>
-						<!--
-                  @foreach($division_levels as $division_level)
-                            <div class="form-group manual-field{{ $errors->has('division_level_' . $division_level->level) ? ' has-error' : '' }}">
-                                <label for="{{ 'division_level_' . $division_level->level }}" class="col-sm-2 control-label">{{ $division_level->name }}</label>
-
-                                <div class="col-sm-10">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-black-tie"></i>
-                                        </div>
-                                        <select id="{{ 'division_level_' . $division_level->level }}" name="{{ 'division_level_' . $division_level->level }}" class="form-control" onchange="divDDOnChange(this)">
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                          @endforeach   
-                    -->
                      <div class="box-footer">
-                        <button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Cancel</button>
-                       <button type="submit" id="gen-report" name="gen-report" class="btn btn-primary pull-right"><i class="fa fa-check"></i> Generate Report</button>
+                        <button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Annuler</button>
+                       <button type="submit" id="gen-report" name="gen-report" class="btn btn-primary pull-right"><i class="fa fa-check"></i> Générer un rapport</button>
                     </div>
                     <!-- /.box-footer -->
                  </div>

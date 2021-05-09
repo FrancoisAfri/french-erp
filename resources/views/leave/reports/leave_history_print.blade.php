@@ -53,15 +53,15 @@
 			<div class="box-body">
 				<table class="table table-striped">
 					<tr>
-						<th>Employee Number </th>
-						<th>Names</th>
+						<th>Numéro d'employé</th>
+						<th>Nom de l'employé</th>
 						<th>Action</th>
-						<th>Action Date</th>
-						<th>Leave Type</th>
-						<th>Previous Balance</th>
+						<th>Date de l'action</th>
+						<th>Type de congé</th>
+						<th>Solde précédent</th>
 						<th>Transaction</th>
-						<th>Current Balance</th>
-						<th>performed By</th>
+						<th>Solde actuel</th>
+						<th>Exécuté par</th>
 					</tr>
 					@if(count($historyAudit) > 0)
 						@foreach($historyAudit as $audit)

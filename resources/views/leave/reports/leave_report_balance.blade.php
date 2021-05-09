@@ -8,7 +8,7 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Leave Report  Balance</h3>
+                    <h3 class="box-title">Rapport de congés restant</h3>
                 </div>
                 <!-- /.box-header -->
 				<form class="form-horizontal" method="POST" action="/leave/bal">
@@ -23,10 +23,10 @@
                         <table id="example2" class="table table-bordered table-hover">
 							<thead>
 								<tr>
-									<th>Employee Number </th>
-									<th>Employee Name </th>
-									<th>Leave Type</th>
-									<th>Balance days(s)</th>
+									<th>Numéro d'employé</th>
+									<th>Nom de l'employé</th>
+									<th>Type de congé</th>
+									<th>Solde</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -43,17 +43,17 @@
 							</tbody>
 							<tfoot>
 								<tr>
-									<th>Employee Number </th>
-									<th>Employee Name </th>
-									<th>Leave Type</th>
-									<th>Balance days(s)</th>
+									<th>Numéro d'employé</th>
+									<th>Nom de l'employé</th>
+									<th>Type de congé</th>
+									<th>Solde</th>
 								</tr>
 							</tfoot>
 						</table>
 						<div class="row no-print">
 							<div class="col-xs-12">
-								<button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back</button>
-								<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-print"></i>Print report</button>
+								<button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Retourner</button>
+								<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Imprimer</button>
 							</div>
 						</div>
 								<!-- End amortization /table -->

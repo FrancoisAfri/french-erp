@@ -47,11 +47,11 @@
 				<table id="example2" class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>Employee Number </th>
-							<th>Employee Name </th>
-							<th>Leave Type</th>
-							<th>Date taken</th>
-							<th>Day(s)</th>
+							<th>Numéro d'employé</th>
+							<th>Nom de l'employé</th>	
+							<th>Type de congé</th>
+							<th>Date prise</th>
+							<th>Jour(s)</th>
 						</tr>
 					</thead>
                     <tbody>
@@ -70,11 +70,11 @@
                     <tfoot>
 					<tfoot>
                     	<tr>
-							<th>Employee Number </th>
-							<th>Employee Name </th>
-							<th>Leave Type</th>
-							<th>Date taken</th>
-							<th>Day(s)</th>
+							<th>Numéro d'employé</th>
+							<th>Nom de l'employé</th>	
+							<th>Type de congé</th>
+							<th>Date prise</th>
+							<th>Jour(s)</th>
 						</tr>
                     </tfoot>
 				</table>

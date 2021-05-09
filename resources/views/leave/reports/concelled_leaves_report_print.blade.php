@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cancelled Leave Applications Report Printed By {{ $printing_person }}</title>
+    <title>Rapport de demandes de congé annulés imprimé par {{ $printing_person }}</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -51,7 +51,7 @@
             <div class="col-sm-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Cancelled Leave Applications Report</h3>
+                        <h3 class="box-title">Rapport de demandes de congé annulés</h3>
                     </div>
                     <!-- /.box-header -->
                         <div class="box-body">
@@ -61,13 +61,13 @@
                                 <table class="table table-striped">
                                     <tr>
                                         <th class="text-center" width="5px">#</th>
-                                        <th>Employee Number</th>
-                                        <th>Employee Name</th>
-                                        <th>Leave Type</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Cancelled By</th>
-                                        <th>Cancellation Reason</th>
+                                        <th>Numéro d'employé</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Date de début</th>
+										<th>Date de fin</th>
+										<th>Annulé par</th>
+										<th>Raison de l'annulation</th>
                                     </tr>
                                     @if(count($leaveApplications) > 0)
                                         @foreach($leaveApplications as $leaveApplication)
@@ -84,8 +84,8 @@
                                 </table>
                                 <div class="row no-print">
                                     <div class="col-xs-12">
-                                        <a href="/leave/reports" id="cancel" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back</a>
-                                        <button type="submit" id="cancel" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</button>
+                                        <a href="/leave/reports" id="cancel" class="btn btn-default"><i class="fa fa-arrow-left"></i> Retourner</a>
+                                        <button type="submit" id="cancel" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Imprimer</button>
                                     </div>
                                 </div>
                                 <!-- End amortization /table -->

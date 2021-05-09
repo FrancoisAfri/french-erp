@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Leave Taken Report Printed By {{ $user->person->first_name.' '. $user->person->surname }}</title>
+  <title>rapport de congés pris imprimé par {{ $user->person->first_name.' '. $user->person->surname }}</title>
  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -47,11 +47,11 @@
 				<table id="example2" class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>Employee Number </th>
-							<th>Employee Name </th>
-							<th>Leave Type </th>
-							<th>Min Day(s)</th>
-							<th>Max Day(s)</th>
+							<th>Numéro d'employé</th>
+							<th>Nom de l'employé</th>
+							<th>Type de congé</th>
+							<th>Min jour(s)</th>
+							<th>Max jour(s)</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -69,11 +69,11 @@
 					</tbody>
 					<tfoot>
 						<tr>
-							<th>Employee Number </th>
-							<th>Employee Name </th>
-							<th>Leave Type </th>
-							<th>Min Day(s)</th>
-							<th>Max Day(s)</th>
+							<th>Numéro d'employé</th>
+							<th>Nom de l'employé</th>
+							<th>Type de congé</th>
+							<th>Min jour(s)</th>
+							<th>Max jour(s)</th>
 						</tr>
 					</tfoot>
 				</table>
