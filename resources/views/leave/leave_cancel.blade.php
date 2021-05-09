@@ -11,7 +11,7 @@
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <i class="fa fa-user pull-right"></i>
-                        <h3 class="box-title">Leave Approvals</h3>
+                        <h3 class="box-title">Liste des Congés</h3>
                     </div>
                     <div class="box-body">
                         <div style="overflow-X:auto;">
@@ -19,15 +19,15 @@
                                 <thead>
 									<tr>
 										<th></th>
-										<th>Employee Number</th>
-										<th>Employee name</th>
-										<th>Leave Type</th>
-										<th>Date From</th>
-										<th>Date To</th>
-										<th>Day(s)</th>
-										<th>Notes</th>
-										<th>Report To</th>
-										<th>Status</th>
+										<th>Numero de l'employé</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Dater de</th>
+										<th>Date à</th>
+										<th>Jour (s) demandé (s)</th>
+										<th>Remarques</th>
+										<th>Rapports à</th>
+										<th>Statut</th>
 									</tr>
                                 </thead>
                                 <tbody>
@@ -53,15 +53,15 @@
                                 <tfoot>
 									<tr>
 										<th></th>
-										<th>Employee Number</th>
-										<th>Employee name</th>
-										<th>Leave Type</th>
-										<th>Date From</th>
-										<th>Date To</th>
-										<th>Day(s)</th>
-										<th>Notes</th>
-										<th>Report To</th>
-										<th>Status</th>
+										<th>Numero de l'employé</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Dater de</th>
+										<th>Date à</th>
+										<th>Jour (s) demandé (s)</th>
+										<th>Remarques</th>
+										<th>Rapports à</th>
+										<th>Statut</th>
 									</tr>
                                 </tfoot>
                             </table>
@@ -70,7 +70,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button id="cancel" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i> Back</button>
+                    <button id="cancel" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i> Retourner</button>
                 </div>
                 <!-- /.box-footer -->
         </div>

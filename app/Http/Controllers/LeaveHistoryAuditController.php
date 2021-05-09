@@ -40,10 +40,10 @@ class LeaveHistoryAuditController extends Controller {
         $data['page_title'] = "Leave Audit Report";
         $data['page_description'] = "Leave History Audit";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+                ['title' => 'Gestion des congés', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Leave History Audit', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Leave History Audit';
 
         $users = DB::table('hr_people')->where('status', 1)->orderBy('first_name', 'asc')->get();
@@ -58,7 +58,7 @@ class LeaveHistoryAuditController extends Controller {
         $data['leaveTypes'] = $leaveTypes;
         $data['employees'] = $employees;
         $data['users'] = $users;
-        AuditReportsController::store('Leave Management', 'Reports page accessed', "Accessed by User", 0);
+        AuditReportsController::store('Gestion des congés', 'Reports page accessed', "Accessed by User", 0);
         return view('leave.leave_search')->with($data);
     }
 
@@ -113,15 +113,15 @@ class LeaveHistoryAuditController extends Controller {
         $leaveTypes = LeaveType::where('status', 1)->orderBy('name', 'asc')->get();
         $divisionLevels = DivisionLevel::where('active', 1)->orderBy('id', 'desc')->get();
 
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
         $data['leaveTypes'] = $leaveTypes;
         $data['division_levels'] = $divisionLevels;
         $data['employees'] = $employees;
-		$data['page_title'] = "Report";
-        $data['page_description'] = "Leave Reports";
+		$data['page_title'] = "Rapports";
+        $data['page_description'] = "Rapports";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], ['title' => 'Leave Reports', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], ['title' => 'Leave Reports', 'active' => 1, 'is_module' => 0]
         ];
         AuditReportsController::store('Leave History Audit', 'Reports page accessed', "Accessed by User", 0);
         return view('leave.reports.leave_report_index')->with($data);
@@ -177,12 +177,12 @@ class LeaveHistoryAuditController extends Controller {
         $data['page_title'] = "Leave history Audit Report";
         $data['page_description'] = "Leave history Audit Report";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+                ['title' => 'Gestion des congés', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Leave History Report', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
-        AuditReportsController::store('Leave Management', 'Viewed Leave History report Results', "view Audit Results", 0);
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
+        AuditReportsController::store('Gestion des congés', 'Viewed Leave History report Results', "view Audit Results", 0);
         return view('leave.reports.leave_history_report')->with($data);
     }
 	#
@@ -227,11 +227,11 @@ class LeaveHistoryAuditController extends Controller {
         $data['page_title'] = "Leave history Audit Report";
         $data['page_description'] = "Leave history Audit Report";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+                ['title' => 'Gestion des congés', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Leave History Report', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
         $user = Auth::user()->load('person');
 		$companyDetails = CompanyIdentity::systemSettings();
         $data['support_email'] = $companyDetails['support_email'];
@@ -242,7 +242,7 @@ class LeaveHistoryAuditController extends Controller {
         $data['full_company_name'] = $companyDetails['full_company_name'];
         $data['user'] = $user;
 
-        AuditReportsController::store('Leave Management', 'Printed Leave History Report Results', "view Audit Results", 0);
+        AuditReportsController::store('Gestion des congés', 'Printed Leave History Report Results', "view Audit Results", 0);
         return view('leave.reports.leave_history_print')->with($data);
     }
     public function cancelledLeaves(Request $request) {
@@ -292,11 +292,11 @@ class LeaveHistoryAuditController extends Controller {
         $data['page_title'] = "Leave Report";
         $data['page_description'] = "Cancelled Leaves Report";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+            ['title' => 'Gestion des congés', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Leave Report', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
         $data['leaveApplications'] = $leaveApplications;
 
         if ($print) {
@@ -305,11 +305,11 @@ class LeaveHistoryAuditController extends Controller {
             $data['printing_person'] = Auth::user()->person->full_name;
             $data['company_logo'] = $companyDetails['company_logo_url'];
             $data['date'] = date("d-m-Y");
-            AuditReportsController::store('Leave Management', 'Printed Leaves Cancellation Report', "Generated by user", 0);
+            AuditReportsController::store('Gestion des congés', 'Printed Leaves Cancellation Report', "Generated by user", 0);
             return view('leave.reports.concelled_leaves_report_print')->with($data);
         }
         else {
-            AuditReportsController::store('Leave Management', 'Generate Cancelled Leaves Report', "Generated by user", 0);
+            AuditReportsController::store('Gestion des congés', 'Generate Cancelled Leaves Report', "Generated by user", 0);
             return view('leave.reports.cancelled_leaves_report')->with($data);
         }
     }
@@ -347,15 +347,15 @@ class LeaveHistoryAuditController extends Controller {
         $data['userID'] = $userID;
         $data['LevTypID'] = $LevTypID;
         $data['credit'] = $credit;
-        $data['page_title'] = "Leave Reports";
-        $data['page_description'] = "Leave Report";
+        $data['page_title'] = "Rapports";
+        $data['page_description'] = "Rapports";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
-            ['title' => 'Leave Balance Audit', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+            ['title' => 'Rapports', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Reports';
-        AuditReportsController::store('Leave Management', 'Viewed Leave Balance Report Results', "view Reports Results", 0);
+        AuditReportsController::store('Gestion des congés', 'Viewed Leave Balance Report Results', "view Reports Results", 0);
         return view('leave.reports.leave_report_balance')->with($data);
     }
 
@@ -388,14 +388,14 @@ class LeaveHistoryAuditController extends Controller {
         $data['user_id'] = $userID;
         $data['LevTypID'] = $LevTypID;
         $data['credit'] = $credit;
-        $data['page_title'] = "Leave history Audit Report";
-        $data['page_description'] = "Leave history Audit Report";
+        $data['page_title'] = "Rapports";
+        $data['page_description'] = "Rapports";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
-            ['title' => 'Leave History Audit', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+            ['title' => 'Rapports', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
         $user = Auth::user()->load('person');
 		$companyDetails = CompanyIdentity::systemSettings();
         $data['support_email'] = $companyDetails['support_email'];
@@ -405,7 +405,7 @@ class LeaveHistoryAuditController extends Controller {
 		
         $data['full_company_name'] = $companyDetails['full_company_name'];
         $data['user'] = $user;
-        AuditReportsController::store('Leave Management', 'Printed Leave Balance Report Results', "view Audit Results", 0);
+        AuditReportsController::store('Gestion des congés', 'Printed Leave Balance Report Results', "view Audit Results", 0);
         return view('leave.reports.leave_balance_print')->with($data);
     }
 
@@ -442,15 +442,15 @@ class LeaveHistoryAuditController extends Controller {
         $data['userID'] = $userID;
         $data['LevTypID'] = $LevTypID;
         $data['allowances'] = $allowances;
-        $data['page_title'] = "Leave Reports";
-        $data['page_description'] = "Leave Report";
+        $data['page_title'] = "Rapports";
+        $data['page_description'] = "Rapports";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1],
-                ['title' => 'Leave Taken Audit', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1],
+                ['title' => 'Rapports', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
-        AuditReportsController::store('Leave Management', 'Viewed Leave Allocation Report Results', "view Reports Results", 0);
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
+        AuditReportsController::store('Gestion des congés', 'Viewed Leave Allocation Report Results', "view Reports Results", 0);
         return view('leave.reports.leave_allowance report')->with($data);
     }
 	//// allowance Printed
@@ -488,11 +488,11 @@ class LeaveHistoryAuditController extends Controller {
         $data['page_title'] = "Leave Allowance";
         $data['page_description'] = "Report";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+                ['title' => 'Gestion des congés', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Reports', 'active' => 1, 'is_module' => 0]
         ];
 
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Reports';
 		$user = Auth::user()->load('person');
 		$companyDetails = CompanyIdentity::systemSettings();
@@ -503,7 +503,7 @@ class LeaveHistoryAuditController extends Controller {
 		
         $data['full_company_name'] = $companyDetails['full_company_name'];
         $data['user'] = $user;
-        AuditReportsController::store('Leave Management', 'Printed Leave Allowance Report Results', "view Reports Results", 0);
+        AuditReportsController::store('Gestion des congés', 'Printed Leave Allowance Report Results', "view Reports Results", 0);
         return view('leave.reports.leave_allowance_print_report')->with($data);
     }
 
@@ -555,17 +555,17 @@ class LeaveHistoryAuditController extends Controller {
         $data['LevTypID'] = $LevTypID;
         $data['actionDate'] = $actionDate;
         $data['leaveTakens'] = $leaveTakens;
-        $data['page_title'] = "Leave Reports";
-        $data['page_description'] = "Leave Report";
+        $data['page_title'] = "Rapports";
+        $data['page_description'] = "Rapports";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
-            ['title' => 'Reports', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+            ['title' => 'Rapports', 'active' => 1, 'is_module' => 0]
         ];
 
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
 		
-        AuditReportsController::store('Leave Management', 'Viewed Leave Taken Report Results', "view Reports Results", 0);
+        AuditReportsController::store('Gestion des congés', 'Viewed Leave Taken Report Results', "view Reports Results", 0);
         return view('leave.reports.leave_taken report')->with($data);
     }
 	// print taken
@@ -617,15 +617,15 @@ class LeaveHistoryAuditController extends Controller {
         $data['userID'] = $userID;
         $data['LevTypID'] = $LevTypID;
         $data['leaveTakens'] = $leaveTakens;
-        $data['page_title'] = "Leave Reports";
-        $data['page_description'] = "Leave Report";
+        $data['page_title'] = "Rapports";
+        $data['page_description'] = "Rapports";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
-            ['title' => 'Reports', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+            ['title' => 'Rapports', 'active' => 1, 'is_module' => 0]
         ];
 
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
 		$user = Auth::user()->load('person');
 		$companyDetails = CompanyIdentity::systemSettings();
         $data['support_email'] = $companyDetails['support_email'];
@@ -635,7 +635,7 @@ class LeaveHistoryAuditController extends Controller {
 		
         $data['full_company_name'] = $companyDetails['full_company_name'];
         $data['user'] = $user;
-        AuditReportsController::store('Leave Management', 'Viewed Leave Taken Report Results', "view Reports Results", 0);
+        AuditReportsController::store('Gestion des congés', 'Viewed Leave Taken Report Results', "view Reports Results", 0);
         return view('leave.reports.leave_taken_print_report')->with($data);
     }
     public function leavepaidOut(Request $request) {
@@ -671,15 +671,15 @@ class LeaveHistoryAuditController extends Controller {
         $data['userID'] = $userID;
         $data['LevTypID'] = $LevTypID;
         $data['custom'] = $custom;
-        $data['page_title'] = "Leave Reports";
-        $data['page_description'] = "Leave Report";
+        $data['page_title'] = "";
+        $data['page_description'] = "Rapports";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+                ['title' => 'Gestion des congés', 'path' => '/leave/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Leave Taken Audit', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Reports';
-        AuditReportsController::store('Leave Management', 'Viewed leave Paid out Report Results', "view Reports Results", 0);
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Rapports';
+        AuditReportsController::store('Gestion des congés', 'Viewed leave Paid out Report Results', "view Reports Results", 0);
         return view('leave.reports.leave_paid_out report')->with($data);
     }
 	

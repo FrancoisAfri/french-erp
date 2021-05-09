@@ -12,23 +12,23 @@
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <i class="fa fa-user pull-right"></i>
-                        <h3 class="box-title">Leave Approvals</h3>
+                        <h3 class="box-title">Liste des Congés </h3>
                     </div>
                     <div class="box-body">
                         <div style="overflow-X:auto;">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
 									<tr>
-										<th>Employee name</th>
-										<th>Leave Type</th>
-										<th>Date From</th>
-										<th>Date To</th>
-										<th>Date Applied</th>
-										<th>Day(s) Requested</th>
-										<th>Notes</th>
-										<th>Supporting Documents</th>
-										<th>Status</th>
-										<th>Reports To</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Dater de</th>
+										<th>Date à</th>
+										<th>Date d'application</th>
+										<th>Jour (s) demandé (s)</th>
+										<th>Remarques</th>
+										<th>Documents justificatifs</th>
+										<th>Statut</th>
+										<th>Rapports à</th>
 										<th>Action</th>
 										<th></th>
 									</tr>
@@ -51,11 +51,10 @@
 														@if(!empty($approval->supporting_docs))
 															<a class="btn btn-default btn-flat btn-block pull-right btn-xs"
 															   href="{{ Storage::disk('local')->url("Leave/LeaveDocuments/$approval->supporting_docs") }}" target="_blank"><i
-																		class="fa fa-file-pdf-o"></i> View Document</a>
+																		class="fa fa-file-pdf-o"></i> Afficher le document</a>
 														@else
 															<a class="btn btn-default pull-centre btn-xs"><i
-																		class="fa fa-exclamation-triangle"></i> Nothing
-																Uploaded</a>
+																		class="fa fa-exclamation-triangle"></i> Pas de document</a>
 														@endif
 													</div>
 												</td>
@@ -65,30 +64,30 @@
 													<button type="button" id="Accept"
 															class="btn btn-success btn-xs btn-detail open-modal"
 															value="{{$approval->id}}"
-															onclick="postData({{$approval->id}}, 'approval_id')">Accept
+															onclick="postData({{$approval->id}}, 'approval_id')">J'accepte
 													</button>
 
 												</td>
 												<td>
 													<button type="button" id="reject-reason" class="btn btn-danger btn-xs"
 														data-toggle="modal" data-target="#reject-leave-modal"
-														data-id="{{ $approval->id }}">Decline</button></td>
+														data-id="{{ $approval->id }}">Déclin</button></td>
 											</tr>
 										@endforeach
 									@endif
                                 </tbody>
                                 <tfoot>
 									<tr>
-										<th>Employee name</th>
-										<th>Leave Type</th>
-										<th>Date From</th>
-										<th>Date To</th>
-										<th>Date Applied</th>
-										<th>Day(s) Requested</th>
-										<th>Notes</th>
-										<th>Supporting Documents</th>
-										<th>Status</th>
-										<th>Reports To</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Dater de</th>
+										<th>Date à</th>
+										<th>Date d'application</th>
+										<th>Jour (s) demandé (s)</th>
+										<th>Remarques</th>
+										<th>Documents justificatifs</th>
+										<th>Statut</th>
+										<th>Rapports à</th>
 										<th>Action</th>
 										<th></th>
 									</tr>
@@ -102,23 +101,23 @@
 				<div class="box box-primary">
                     <div class="box-header with-border">
                         <i class="fa fa-user pull-right"></i>
-                        <h3 class="box-title">Subordinates Leave Approvals</h3>
+                        <h3 class="box-title">Approbations de congé des subordonnés</h3>
                     </div>
                     <div class="box-body">
                         <div style="overflow-X:auto;">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
 									<tr>
-										<th>Employee name</th>
-										<th>Leave Type</th>
-										<th>Date From</th>
-										<th>Date To</th>
-										<th>Date Applied</th>
-										<th>Day(s) Requested</th>
-										<th>Notes</th>
-										<th>Supporting Documents</th>
-										<th>Status</th>
-										<th>Reports To</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Dater de</th>
+										<th>Date à</th>
+										<th>Date d'application</th>
+										<th>Jour (s) demandé (s)</th>
+										<th>Remarques</th>
+										<th>Documents justificatifs</th>
+										<th>Statut</th>
+										<th>Rapports à</th>
 										<th>Action</th>
 										<th></th>
 									</tr>
@@ -141,11 +140,10 @@
 														@if(!empty($approval->supporting_docs))
 															<a class="btn btn-default btn-flat btn-block pull-right btn-xs"
 															   href="{{ Storage::disk('local')->url("Leave/LeaveDocuments/$approval->supporting_docs") }}" target="_blank"><i
-																		class="fa fa-file-pdf-o"></i> View Document</a>
+																		class="fa fa-file-pdf-o"></i> Afficher le document</a>
 														@else
 															<a class="btn btn-default pull-centre btn-xs"><i
-																		class="fa fa-exclamation-triangle"></i> Nothing
-																Uploaded</a>
+																		class="fa fa-exclamation-triangle"></i> Pas De Document</a>
 														@endif
 													</div>
 												</td>
@@ -155,30 +153,30 @@
 													<button type="button" id="Accept"
 															class="btn btn-success btn-xs btn-detail open-modal"
 															value="{{$approval->id}}"
-															onclick="postData({{$approval->id}}, 'approval_id')">Accept
+															onclick="postData({{$approval->id}}, 'approval_id')">J'accepte
 													</button>
 
 												</td>
 												<td>
 													<button type="button" id="reject-reason" class="btn btn-danger btn-xs"
 														data-toggle="modal" data-target="#reject-leave-modal"
-														data-id="{{ $approval->id }}">Decline</button></td>
+														data-id="{{ $approval->id }}">Déclin</button></td>
 											</tr>
 										@endforeach
 									@endif
                                 </tbody>
                                 <tfoot>
 									<tr>
-										<th>Employee name</th>
-										<th>Leave Type</th>
-										<th>Date From</th>
-										<th>Date To</th>
-										<th>Date Applied</th>
-										<th>Day(s) Requested</th>
-										<th>Notes</th>
-										<th>Supporting Documents</th>
-										<th>Status</th>
-										<th>Reports To</th>
+										<th>Nom de l'employé</th>
+										<th>Type de congé</th>
+										<th>Dater de</th>
+										<th>Date à</th>
+										<th>Date d'application</th>
+										<th>Jour (s) demandé (s)</th>
+										<th>Remarques</th>
+										<th>Documents justificatifs</th>
+										<th>Statut</th>
+										<th>Rapports à</th>
 										<th>Action</th>
 										<th></th>
 									</tr>
@@ -189,7 +187,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button id="cancel" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i> Back</button>
+                    <button id="cancel" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i> Retourner</button>
                 </div>
                 <!-- /.box-footer -->
 			</form>
@@ -200,7 +198,7 @@
     @include('leave.partials.reject_leave')
     <!--  -->
     @if(Session('success_application'))
-        @include('leave.partials.success_action', ['modal_title' => "Application Successful!", 'modal_content' => session('success_application')])
+        @include('leave.partials.success_action', ['modal_title' => "Application réussie!!!", 'modal_content' => session('success_application')])
     @endif
     <!--  -->
     </div>

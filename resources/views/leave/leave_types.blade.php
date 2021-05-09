@@ -9,7 +9,7 @@
     <div class="col-md-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Leave Types</h3>
+                <h3 class="box-title">Types de congés</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -20,7 +20,7 @@
                 <table class="table table-bordered">
                     <tr>
                         <th style="width: 10px"></th>
-                        <th>Name</th>
+                        <th>Nom</th>
                         <th>Description</th>
                         <th style="width: 40px"></th>
                     </tr> 
@@ -29,7 +29,7 @@
                     <tr id="modules-list">
                         <td nowrap>
                             <button type="button" id="edit_leave" class="btn btn-primary  btn-xs" data-toggle="modal" data-target="#edit-leave-modal" data-id="{{ $leaveType->id }}" data-name="{{ $leaveType->name }}" data-description="{{ $leaveType->description }}"> <i class="fa fa-pencil-square-o">
-                                </i> Edit</button>
+                                </i> Éditer</button>
                         </td>
                         <td>{{ $leaveType->name }} </td>
                         <td>{{ $leaveType->description }} </td>
@@ -45,7 +45,7 @@
                     <tr id="modules-list">
                         <td colspan="5">
                             <div class="alert alert-danger alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> No leave types to display, please start by adding a new leave type. </div>
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Aucun type de congé à afficher, veuillez commencer par ajouter un nouveau type de congé. </div>
                         </td>
                     </tr> 
                 @endif
@@ -53,7 +53,7 @@
             </div>
             <!-- /.box-body -->
             <div class="modal-footer">
-                <button type="button" id="add-new-leave" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add-new-leave-modal">Add Leave Type</button>
+                <button type="button" id="add-new-leave" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add-new-leave-modal">Ajouter un type de congé</button>
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@
     <div class="col-md-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Custom Leave Types</h3>
+                <h3 class="box-title">Types de congés personnalisés</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -79,15 +79,15 @@
                 <table class="table table-bordered">
                     <tr>
                         <th style="width: 10px"></th>
-                        <th>Employee Name</th>
-                        <th>Annual Days</th>
+                        <th>Nom de l'employé</th>
+                        <th>Journées annuelles</th>
                         <th style="width: 40px"></th>
                     </tr> @if (count($leave_customs) > 0)
                     @foreach($leave_customs as $leavecustom)
                     <tr id="modules-list">
                         <td nowrap>
                             <button type="button" id="edit_leave" class="btn btn-primary  btn-xs" data-toggle="modal" data-target="#edit-customleave-modal" data-id="{{ $leavecustom->id }}" data-employeename="{{($leavecustom->userCustom) ? $leavecustom->userCustom->first_name." ".$leavecustom->userCustom->surname : ''}}"      data-number_of_days="{{ $leavecustom->number_of_days }}"> <i class="fa fa-pencil-square-o">
-                                </i> Edit</button>
+                                </i> Éditer</button>
                         </td>
                         <td>{{ ($leavecustom->userCustom) ? $leavecustom->userCustom->first_name." ".$leavecustom->userCustom->surname : ''}} </td>
                         <td>{{ $leavecustom->number_of_days }} </td>
@@ -102,7 +102,7 @@
                     <tr id="modules-list">
                         <td colspan="5">
                             <div class="alert alert-danger alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> No Custom leaves to display, please start by adding a new Custom leave . </div>
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Aucune feuille personnalisée à afficher, veuillez commencer par ajouter un nouveau congé personnalisé . </div>
                         </td>
                     </tr>
                     @endif
@@ -110,7 +110,7 @@
             </div>
             <!-- /.box-body -->
             <div class="modal-footer">
-                <button type="button" id="add_custom_leave" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add-custom-leave-modal">Add Custom Leave</button> {{--hr leave approval--}} </div>
+                <button type="button" id="add_custom_leave" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add-custom-leave-modal">Ajouter un congé personnalisé</button> {{--hr leave approval--}} </div>
         </div>
     </div>
     @include('leave.partials.add_custom_leave')

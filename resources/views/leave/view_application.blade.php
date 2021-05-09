@@ -18,67 +18,66 @@
         <div class="box box-primary">
             <div class="box-header with-border">
                 <i class="fa fa-anchor pull-right"></i>
-                <h3 class="box-title">Leave Application</h3>
-                <p id="box-subtitle">Details</p>
+                <h3 class="box-title">Demande de congé</h3>
+                <p id="box-subtitle">Des détails</p>
             </div>
 			<div class="box-body">
 				<table id="example2" class="table table-bordered table-hover">
 					<tr>
-						<td class="caption">Employee Number</td>
+						<td class="caption">Numéro d'employé</td>
 						<td>{{ !empty($leave->person->employee_number) ? $leave->person->employee_number : '' }}</td>
-						<td class="caption">Employee Name</td>
+						<td class="caption">Nom de l'employé</td>
 						<td>{{ !empty($leave->person->first_name) && !empty($leave->person->surname) ? $leave->person->first_name.' '. $leave->person->surname : '' }}</td>
 					</tr>
 					<tr>
-						<td class="caption">Leave Type</td>
+						<td class="caption">Type de congé</td>
 						<td>{{ !empty($leave->leavetpe->name) ? $leave->leavetpe->name : ''}}</td>
-						<td class="caption">Day(s) Requested</td>
+						<td class="caption">Jour (s) demandé (s)</td>
 						<td>{{ !empty($leave->leave_taken) ? $leave->leave_taken / 8 : ''}}</td>
 					</tr>
 					<tr>
-						<td class="caption">Supporting Document</td>
+						<td class="caption">Document justificatif</td>
 						<td>@if(!empty($leave->supporting_docs))
 								<a class="btn btn-default btn-flat btn-block pull-right btn-xs"
 								   href="{{ Storage::disk('local')->url("Leave/LeaveDocuments/$leave->supporting_docs") }}" target="_blank"><i
-											class="fa fa-file-pdf-o"></i> View Document</a>
+											class="fa fa-file-pdf-o"></i> Afficher le document</a>
 							@else
 								<a class="btn btn-default pull-centre btn-xs"><i
-											class="fa fa-exclamation-triangle"></i> Nothing
-									Uploaded</a>
+											class="fa fa-exclamation-triangle"></i> Pas de document</a>
 							@endif</td>
-						<td class="caption">Status</td>
+						<td class="caption">Statut</td>
 						<td>{{ !empty($leave->status) ? $leaveStatus[$leave->status] : ''}}</td>
 					</tr>
 					<tr>
-						<td class="caption">Start Date</td>
+						<td class="caption">Date de début</td>
 						<td>{{ !empty($leave->start_date) ? date(' d M Y', $leave->start_date) : ''}}</td>
-						<td class="caption">End Date</td>
+						<td class="caption">Date de fin</td>
 						<td>{{ !empty($leave->end_date) ? date(' d M Y', $leave->end_date) : ''}}</td>
 					</tr>
 					<tr>
-						<td class="caption">Notes</td>
+						<td class="caption">Remarques</td>
 						<td>{{ !empty($leave->notes) ? $leave->notes : ''}}</td>
-						<td class="caption" width="25%">Date Added</td>
+						<td class="caption" width="25%">date ajoutée</td>
 						<td width="25%">{{ !empty($leave->created_at) ? $leave->created_at : ''}}</td>
 					</tr>
 					<tr>
-						<td class="caption">Reject Reason</td>
+						<td class="caption">Motif du rejet</td>
 						<td>{{ !empty($leave->reject_reason) ? $leave->reject_reason : ''}}</td>
-						<td class="caption">Manager</td>
+						<td class="caption">Superviseur</td>
 						<td>{{ (!empty($leave->manager->first_name)) ?  $leave->manager->first_name.' '.$leave->manager->surname : ''}}</td>
 					</tr>
 					<tr>
-						<td class="caption">Canceller By</td>
+						<td class="caption">Annuleur par</td>
 						<td>{{ (!empty($leave->canceller->first_name)) ?  $leave->canceller->first_name.' '.$leave->canceller->surname : ''}}</td>
-						<td class="caption">Cancellation Reason</td>
+						<td class="caption">Raison de l'annulation</td>
 						<td>{{ !empty($leave->cancellation_reason) ? $leave->cancellation_reason : ''}}</td>
 					</tr>
 				</table>
 				<!-- /.box-body -->
 				<div class="box-footer">
-					<button id="cancel" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i> Back</button>
+					<button id="cancel" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i> Retourner</button>
 					@if (!empty($isAdmin))
-						<button id="cancel_application" data-toggle="modal" data-target="#cancel-leave-modal" class="btn btn-primary btn-warning pull-right"><i class="fa fa-trash"></i> Cancel Application</button>
+						<button id="cancel_application" data-toggle="modal" data-target="#cancel-leave-modal" class="btn btn-primary btn-warning pull-right"><i class="fa fa-trash"></i> Annuler la demande</button>
 					@endif
 				</div>
 				<!-- /.box-footer -->

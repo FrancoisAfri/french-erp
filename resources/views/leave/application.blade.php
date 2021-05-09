@@ -18,8 +18,8 @@
         <div class="box box-primary">
             <div class="box-header with-border">
                 <i class="fa fa-anchor pull-right"></i>
-                <h3 class="box-title">Leave Application</h3>
-                <p id="box-subtitle">leave Application</p>
+                <h3 class="box-title">Demande de congé</h3>
+                <p id="box-subtitle">Remplissez le formulaire</p>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -40,14 +40,14 @@
                     </div>
                     @endif
                     <div class="form-group {{ $errors->has('hr_person_id') ? ' has-error' : '' }}">
-                        <label for="hr_person_id" class="col-sm-2 control-label">Employees</label>
+                        <label for="hr_person_id" class="col-sm-2 control-label">employés</label>
                         <div class="col-sm-10">
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-user-circle"></i>
                                 </div>
                                 <select class="form-control select2" style="width: 100%;" id="hr_person_id" name="hr_person_id">
-                                    <option value="">*** Select an Employee ***</option>
+                                    <option value="">*** Sélectionnez un employé ***</option>
                                     @foreach($employees as $employee)
                                     <option value="{{ $employee->id }}">{{ $employee->first_name . ' ' . $employee->surname }}</option>
                                     @endforeach
@@ -56,14 +56,14 @@
                         </div>
                     </div>
                      <div class="form-group {{ $errors->has('leave_type') ? ' has-error' : '' }}">
-                        <label for="leave_type" class="col-sm-2 control-label">Leave Types</label>
+                        <label for="leave_type" class="col-sm-2 control-label">Types de Congés</label>
                         <div class="col-sm-10">
                             <div class="input-group">
                                 <div class="input-group-addon">
                                      <i class="fa fa-black-tie"></i>
                                 </div>
                                 <select id="leave_type" name="leave_type" onChange= "changetextbox();" class="form-control">
-                                    <option value=" ">*** Select leave Type ***</option>
+                                    <option value=" ">*** Sélectionnez le type de congé ***</option>
                                     @foreach($leaveTypes as $leaveType)
                                     <option value="{{ $leaveType->id }}">{{ $leaveType->name }}</option>
                                     @endforeach
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="form-group day-field {{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                        <label for="days" class="col-sm-2 control-label">Available:</label>
+                        <label for="days" class="col-sm-2 control-label">Disponible:</label>
                         <div class="col-sm-10">
                             <div class="input-group">
                                 <div class="input-group-addon">
@@ -83,14 +83,14 @@
                         </div>
                     </div>
                     <div class="form-group{{ $errors->has('application_type') ? ' has-error' : '' }}">
-                        <label for="Leave_type" class="col-sm-2 control-label"> Application Type</label>
+                        <label for="Leave_type" class="col-sm-2 control-label"> Type d'application</label>
                         <div class="col-sm-9">
-                            <label class="radio-inline" style="padding-left: 0px;"><input type="radio" id="rdo_days" name="application_type" value="1" checked> Days </label>
-                            <label class="radio-inline"><input type="radio" id="rdo_hours" name="application_type" value="2">  Hours</label>
+                            <label class="radio-inline" style="padding-left: 0px;"><input type="radio" id="rdo_days" name="application_type" value="1" checked> Jours </label>
+                            <label class="radio-inline"><input type="radio" id="rdo_hours" name="application_type" value="2"> Heures</label>
                         </div>
                     </div>
                     <div class="form-group day-field {{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                        <label for="days" class="col-sm-2 control-label">Day</label>
+                        <label for="days" class="col-sm-2 control-label">Jour</label>
                         <div class="col-sm-10">
                             <div class="input-group">
                                 <div class="input-group-addon">
@@ -117,7 +117,7 @@
                         </div>
                         <div class="col-xs-4">
                             <div class="form-group from-field {{ $errors->has('hours') ? ' has-error' : '' }}">
-                                <label for="hours" class="col-sm-4 control-label">Hour(s)</label>
+                                <label for="hours" class="col-sm-4 control-label">Heure(s)</label>
                                 <div class="col-sm-">
                                     <div class="input-group">
                                         <div class="input-group-addon">
@@ -130,7 +130,7 @@
                         </div>
                     </div>
 					<div class="form-group day-field {{ $errors->has('day_requested') ? ' has-error' : '' }}">
-						<label for="day_requested" class="col-sm-2 control-label">Day(s) Requested</label>
+						<label for="day_requested" class="col-sm-2 control-label">Jour (s) demandé (s)</label>
 						<div class="col-sm-10">
 							<div class="input-group">
 								<div class="input-group-addon">
@@ -142,18 +142,18 @@
 						</div>
 					</div>
                     <div class="form-group notes-field{{ $errors->has('description') ? ' has-error' : '' }}">
-                        <label for="days" class="col-sm-2 control-label">Notes</label>
+                        <label for="days" class="col-sm-2 control-label">Remarques</label>
                         <div class="col-sm-10">
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-sticky-note"></i>
                                 </div>
-                                <textarea class="form-control" id="description" name="description" placeholder="Enter a Brief Description of the leave Application..." rows="4">{{ old('description') }}</textarea>
+                                <textarea class="form-control" id="description" name="description" placeholder="Remarques..." rows="4">{{ old('description') }}</textarea>
                             </div>
                         </div>
                     </div>
                     <div class="form-group supDoc-field{{ $errors->has('supporting_docs') ? ' has-error' : '' }}">
-                        <label for="days" class="col-sm-2 control-label">Supporting Document</label>
+                        <label for="days" class="col-sm-2 control-label">Document Justificatif</label>
                         <div class="col-sm-10">
                             <div class="input-group">
                                 <div class="input-group-addon">
@@ -165,7 +165,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                         <input type="submit" id="load-allocation" name="load-allocation" class="btn btn-primary pull-right" value="Submit">
+                         <input type="submit" id="load-allocation" name="load-allocation" class="btn btn-primary pull-right" value="Soumettre">
                     </div>
                     <!-- /.box-footer -->
                 </div>
@@ -176,7 +176,7 @@
     <!-- End new User Form-->
     <!-- Confirmation Modal -->
     @if(Session('success_application'))
-    @include('leave.partials.success_action', ['modal_title' => "Application Successful!", 'modal_content' => session('success_application')])
+    @include('leave.partials.success_action', ['modal_title' => "Application réussie !!!", 'modal_content' => session('success_application')])
     @endif
 </div>
 @endsection
@@ -299,13 +299,13 @@ $(function() {
 			$('.hours-field').hide();
 			$('.day-field').show();
 			$('form[name="leave-application-form"]').attr('action', '/leave/application/day');
-			$('#load-allocation').val("Submit");
+			$('#load-allocation').val("Soumettre");
 		} else if (allType == 2) { //resert leave
 //
 			$('.day-field').hide();
 			$('.hours-field').show();
 			$('form[name="leave-application-form"]').attr('action', '/leave/application/hours');
-			$('#load-allocation').val("Submit");
+			$('#load-allocation').val("Soumettre");
 		} else
 			$('form[name="leave-application-form"]').attr('action', '/leave/application/leavDetails');
 		return allType;

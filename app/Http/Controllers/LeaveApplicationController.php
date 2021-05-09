@@ -83,13 +83,13 @@ class LeaveApplicationController extends Controller
         $data['leave_customs'] = $leave_customs;
 		
 		$data['page_title'] = "Gestion des congés";
-        $data['page_description'] = "Leave Application";
+        $data['page_description'] = "Demande de congé";
         $data['breadcrumb'] = [
             ['title' => 'Gestion des congés', 'path' => '/leave/Apply', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Leave Application', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Demande de congé', 'active' => 1, 'is_module' => 0]
         ];
 		$data['active_mod'] = 'Gestion des congés';
-        $data['active_rib'] = 'Apply';
+        $data['active_rib'] = 'Appliquer';
 
         AuditReportsController::store('Gestion des congés', 'Leave Type Page Accessed', "Accessed By User", 0);
         return view('leave.application')->with($data);
@@ -164,7 +164,7 @@ class LeaveApplicationController extends Controller
 		
 		$data['leaveStatus'] = $leaveStatus;
         $data['active_mod'] = 'Gestion des congés';
-        $data['active_rib'] = 'Approval';
+        $data['active_rib'] = 'Approbation';
         $data['leaveTypes'] = $leaveTypes;
         $data['leaveApplications'] = $leaveApplications;
         $data['subLeaveApplications'] = $subLeaveApplications;
@@ -749,9 +749,9 @@ class LeaveApplicationController extends Controller
 		$data['leaveStatus'] = $leaveStatus;
 		$data['applications'] = $applications;
         $data['active_mod'] = 'Gestion des congés';
-        $data['active_rib'] = 'Search';
+        $data['active_rib'] = 'Rechercher';
 		$data['page_title'] = "Gestion des congés";
-        $data['page_description'] = "Leave Cancellation";
+        $data['page_description'] = "Annulation de congé";
         $data['breadcrumb'] = [
             ['title' => 'Gestion des congés', 'path' => 'leave/search', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'leave Approval', 'active' => 1, 'is_module' => 0]

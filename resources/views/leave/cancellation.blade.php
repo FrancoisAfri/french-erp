@@ -18,8 +18,8 @@
         <div class="box box-primary">
             <div class="box-header with-border">
                 <i class="fa fa-anchor pull-right"></i>
-                <h3 class="box-title">Leave Cancellation</h3>
-                <p id="box-subtitle">Cancellation Form</p>
+                <h3 class="box-title">Annulation de congé</h3>
+                <p id="box-subtitle">Formulaire d'annulation</p>
             </div>
             <!-- /.box-header -->
             <!-- form start -->

@@ -13,8 +13,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <i class="fa fa-anchor pull-right"></i>
-                    <h3 class="box-title">Leave Allocation</h3>
-                    <p id="box-subtitle">leave allocation</p>
+                    <h3 class="box-title">Gérer les Congés</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -43,18 +42,18 @@
                                 <label class="radio-inline" style="padding-left: 0px;"><input type="radio"
                                                                                               id="rdo_adjust"
                                                                                               name="allocation_type"
-                                                                                              value="1" checked> Adjust
+                                                                                              value="1" checked> Adjuster
                                     Leave</label>
                                 <label class="radio-inline"><input type="radio" id="rdo_resert" name="allocation_type"
-                                                                   value="2"> Reset Leave</label>
+                                                                   value="2"> Réinitialiser le congé</label>
                                 <label class="radio-inline"><input type="radio" id="rdo_allocate" name="allocation_type"
-                                                                   value="3"> Allocate Leave</label>
+                                                                   value="3"> Allouer des congés</label>
                             </div>
                         </div>
 
                         <!--                        <div class="form-group ">-->
                         <div class="form-group emp-field{{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                            <label for="leave_types_id" class="col-sm-2 control-label">Leave Type(s)</label>
+                            <label for="leave_types_id" class="col-sm-2 control-label">Type de congé(s)</label>
 
                             <div class="col-sm-10">
                                 <div class="input-group">
@@ -62,7 +61,7 @@
                                         <i class="fa fa-user"></i>
                                     </div>
                                     <select id="leave_types_id" name="leave_types_id" class="form-control select2"
-                                             data-placeholder="**Select Leave type**">
+                                             data-placeholder="** Sélectionnez le type de congé **">
                                         @foreach($leaveTypes as $leaveType)
                                             <option value="{{ $leaveType->id }}">{{ $leaveType->name }}</option>
                                         @endforeach
@@ -89,7 +88,7 @@
                             </div>
                         @endforeach
                         <div class="form-group {{ $errors->has('hr_person_id') ? ' has-error' : '' }}">
-                            <label for="hr_person_id" class="col-sm-2 control-label">Employees</label>
+                            <label for="hr_person_id" class="col-sm-2 control-label">Employés</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
@@ -97,7 +96,7 @@
                                     </div>
                                     <select class="form-control select2" multiple="multiple" style="width: 100%;"
                                             id="hr_person_id" name="hr_person_id[]">
-                                        <option value="">*** Select an Employee ***</option>
+                                        <option value="">*** Sélectionnez un Employé ***</option>
                                         @foreach($employees as $employee)
                                             <option value="{{ $employee->id }}">{{ $employee->first_name . ' ' . $employee->surname }}</option>
                                         @endforeach
@@ -108,7 +107,7 @@
 
 
                         <div class="form-group adjust-field{{ $errors->has('leave_credit_id') ? ' has-error' : '' }}">
-                            <label for="days" class="col-sm-2 control-label">Adjust Number of Days</label>
+                            <label for="days" class="col-sm-2 control-label">Ajuster le nombre de jours</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
@@ -116,20 +115,20 @@
                                     </div>
 
                                     <input type="text" class="form-control" id="adjust_days" name="adjust_days"
-                                           value="{{ old('adjust_days') }}" placeholder="Enter number of days">
+                                           value="{{ old('adjust_days') }}" placeholder="Entrez le nombre de jours">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group resert-field {{ $errors->has('resert_days') ? ' has-error' : '' }}">
-                            <label for="days" class="col-sm-2 control-label">Reset Number of Days</label>
+                            <label for="days" class="col-sm-2 control-label">Réinitialiser le nombre de jours</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar-plus-o"></i>
                                     </div>
                                     <input type="text" class="form-control" id="resert_days" name="resert_days"
-                                           value="{{ old('resert_days') }}" placeholder="Enter number of days">
+                                           value="{{ old('resert_days') }}" placeholder="Entrez le nombre de jours">
                                 </div>
                             </div>
                         </div>
@@ -137,10 +136,10 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i>
-                            Cancel
+                            Retourner
                         </button>
                         <input type="submit" id="load-allocation" name="load-allocation"
-                               class="btn btn-primary pull-right" value="Submit">
+                               class="btn btn-primary pull-right" value="Soumettre">
                     </div>
                     <!-- /.box-footer -->
                 </form>
@@ -150,7 +149,7 @@
         <!-- End new User Form-->
         <!-- Confirmation Modal -->
         @if(Session('success_application'))
-            @include('leave.partials.success_action', ['modal_title' => "Application Successful!", 'modal_content' => session('success_application')])
+            @include('leave.partials.success_action', ['modal_title' => "Application réussie!!!", 'modal_content' => session('success_application')])
         @endif
     </div>
 @endsection

@@ -441,10 +441,10 @@ class LeaveSetupController extends Controller {
 	public function upload()
     {
         $data['page_title'] = "Gestion des congés";
-        $data['page_description'] = "Upload Leave From Excel Sheet";
+        $data['page_description'] = "Télécharger congé à partir d'une feuille Excel";
         $data['breadcrumb'] = [
-            ['title' => 'Leave', 'path' => '/employee_upload', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Leave Balance Upload', 'active' => 1, 'is_module' => 0]
+            ['title' => 'cCongés', 'path' => '/employee_upload', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1],
+            ['title' => '', 'active' => 1, 'is_module' => 0]
         ];
 		
         $data['active_mod'] = 'Gestion des congés';
@@ -492,10 +492,10 @@ class LeaveSetupController extends Controller {
 		else return back()->with('error_add','Please Upload A File.');
 		
         $data['page_title'] = "Gestion des congés";
-        $data['page_description'] = "Upload Leave Balance";
+        $data['page_description'] = "Télécharger le solde des congés";
         $data['breadcrumb'] = [
-            ['title' => 'Gestion des congés', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Leave Balance', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion des Congés', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Jours de Congés', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Appraisals';
@@ -923,13 +923,13 @@ class LeaveSetupController extends Controller {
 		else return back()->with('error_add','Please Upload A File.');
 		
         $data['page_title'] = "Gestion des congés";
-        $data['page_description'] = "Upload Leave Paid Out";
+        $data['page_description'] = "Télécharger Leave Paid Out";
         $data['breadcrumb'] = [
             ['title' => 'Gestion des congés', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Paid Out', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion des congés';
-        $data['active_rib'] = 'Upload';
+        $data['active_rib'] = 'Télécharger';
         AuditReportsController::store('Gestion des congés', "Leave Balance uploaded", "Accessed by User", 0);
     }
 	
@@ -1015,7 +1015,7 @@ class LeaveSetupController extends Controller {
             ['title' => 'Leave Reactivation', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion des congés';
-        $data['active_rib'] = 'Upload';
+        $data['active_rib'] = 'Télécharger';
         AuditReportsController::store('Gestion des congés', "Leave Reactivation uploaded", "Accessed by User", 0);
     }
 }

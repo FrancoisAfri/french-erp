@@ -13,8 +13,8 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <i class="fa fa-user pull-right"></i>
-                    <h3 class="box-title">Leave Search criteria</h3>
-                    <p>Enter search details:</p>
+                    <h3 class="box-title">Les critères de recherche</h3>
+                    <p>Entrez les détails de la recherche:</p>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -24,14 +24,14 @@
 
                     <div class="box-body">
                         <div class="form-group {{ $errors->has('hr_person_id') ? ' has-error' : '' }}">
-                            <label for="hr_person_id" class="col-sm-2 control-label">Employees</label>
+                            <label for="hr_person_id" class="col-sm-2 control-label">employés</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-user-circle"></i>
                                     </div>
                                     <select class="form-control select2" style="width: 100%;" id="hr_person_id" name="hr_person_id">
-                                        <option value="">*** Select an Employee ***</option>
+                                        <option value="">*** Sélectionnez un employé ***</option>
                                         @foreach($employees as $employee)
                                             <option value="{{ $employee->id }}">{{ $employee->first_name . ' ' . $employee->surname }}</option>
                                         @endforeach
@@ -40,28 +40,28 @@
                             </div>
                         </div>
                      <div class="form-group {{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                                <label for="leave_types_id" class="col-sm-2 control-label">Leave Action</label>
+                                <label for="leave_types_id" class="col-sm-2 control-label">Action</label>
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <div class="input-group-addon">
                                             <i class="fa fa-user"></i>
                                         </div>
                                         
-                                             <input type="text" class="form-control" id="action" name="action" placeholder="Enter an Action...">
+                                             <input type="text" class="form-control" id="action" name="action" placeholder="Entrez une action...">
                                       
                                     </div>
                                 </div>
                             </div> 
                         
                           <div class="form-group day-field {{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                            <label for="days" class="col-sm-2 control-label">Action Date</label>
+                            <label for="days" class="col-sm-2 control-label">Date de l'action</label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
 <!--                                    <input type="text" class="form-control pull-right" id="reservation">-->
-                                    <input type="text" class="form-control daterangepicker" id="action_date" name="action_date" value="" placeholder="Select Action Date...">
+                                    <input type="text" class="form-control daterangepicker" id="action_date" name="action_date" value="" placeholder="Sélectionnez la date de l'action...">
                                     
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                      </div>   
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-search-plus"></i> Search</button>
+                        <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-search-plus"></i> Rechercher</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
