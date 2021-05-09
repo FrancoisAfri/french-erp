@@ -37,7 +37,7 @@
     <!-- /.login-logo -->
 	
     <div class="login-box-body">
-        <p class="login-box-msg">Please sign in with your email and password</p>
+        <p class="login-box-msg">Veuillez vous connecter avec votre email et votre mot de passe</p>
 
         @if ($errors->has('email') || $errors->has('password'))
             <div id="failed-login-alert" class="alert alert-danger alert-dismissible fade in">
@@ -54,26 +54,19 @@
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
+                <input id="password" type="password" class="form-control" placeholder="Mot de passe" name="password" required>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox"> Remember Me
-                        </label>
-                    </div>
-                </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Entrez</button>
                 </div>
                 <!-- /.col -->
             </div>
         </form>
 
-        <a href="#" data-toggle="modal" data-target="#forgot-password-modal"><font data-toggle="tooltip" title="Click here to reset your password.">I forgot my password</font></a><br>
+        <a href="#" data-toggle="modal" data-target="#forgot-password-modal"><font data-toggle="tooltip" title="Click here to reset your password.">j'ai oublié mon mot de passe</font></a><br>
         <!-- New Client? Click <a href="/register" class="text-center">here to register</a> -->
     </div>
     <!-- /.login-box-body -->
@@ -84,12 +77,6 @@
 
 <!-- include forgot password modal -->
 @include('security.partials.forgot_password')
-
-<!-- include successful registration modal -->
-@if (session('success_modal'))
-    @include('loan.partials.success_action', ['modal_title' => 'Registration Successful!', 'modal_content' => session('success_modal')])
-@endif
-
 <!-- jQuery 2.2.3 -->
 <script src="/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->

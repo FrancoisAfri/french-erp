@@ -156,16 +156,13 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="{{ ($user->type === 2) ? '/contacts/profile' : '/users/profile' }}" class="btn btn-default btn-flat">Profile</a>
-                            </div>
-                                    <div class="pull-left">
-                                <a href="{{ ($user->type === 2) ? '' : '/general_information/view' }}" class="btn btn-default btn-flat">Informations</a>
+                                <a href="{{ ($user->type === 2) ? '/contacts/profile' : '/users/profile' }}" class="btn btn-default btn-flat">Profil</a>
                             </div>
                             <div class="pull-right">
                                 <a href="{{ url('/logout') }}" class="btn btn-default btn-flat"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    Sign out
+                                    Déconnexion
                                 </a>
 
                                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
