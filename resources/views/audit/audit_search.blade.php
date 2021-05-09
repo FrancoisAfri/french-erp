@@ -13,8 +13,8 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <i class="fa fa-user pull-right"></i>
-                    <h3 class="box-title">Reports Search criteria</h3>
-                    <p>Enter search details:</p>
+                    <h3 class="box-title">Critères de Recherche</h3>
+                    <p>Entrez les détails de la recherche:</p>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -30,7 +30,7 @@
 										<i class="fa fa-user"></i>
 									</div>
 									<select class="form-control select2" style="width: 100%;" id="module_name" name="module_name">
-                                        <option selected="selected" value="">*** Select a Module ***</option>
+                                        <option selected="selected" value="">*** Sélectionner un Module ***</option>
                                             @foreach($modules as $module)
                                                 <option value="{{ $module->name }}">{{ $module->name }}</option>
                                             @endforeach
@@ -39,36 +39,36 @@
                             </div>
                         </div>
 						<div class="form-group">
-                            <label for="action_date" class="col-sm-3 control-label">Action Date</label>
+                            <label for="action_date" class="col-sm-3 control-label">Date de L'action</label>
                             <div class="col-sm-9">
                                 <div class="input-group">
 								<div class="input-group-addon">
 									<i class="fa fa-user"></i>
 								</div>
-								<input type="text" class="form-control daterangepicker" id="action_date" name="action_date" value="" placeholder="Select Action Date...">
+								<input type="text" class="form-control daterangepicker" id="action_date" name="action_date" value="" placeholder="Sélectionner Date de L'action...">
                                 </div>
                             </div>
                         </div>
 						<div class="form-group">
-                            <label for="action" class="col-sm-3 control-label">Action</label>
+                            <label for="action" class="col-sm-3 control-label">L'action</label>
                             <div class="col-sm-9">
                                 <div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-user"></i>
 									</div>
-									<input type="text" class="form-control" id="action" name="action" placeholder="Enter an Action...">
+									<input type="text" class="form-control" id="action" name="action" placeholder="Entrez une action...">
 								</div>
                             </div>
                         </div>
 						<div class="form-group groups">
-                            <label for="user_id" class="col-sm-3 control-label">User</label>
+                            <label for="user_id" class="col-sm-3 control-label">Utilisateur</label>
                             <div class="col-sm-9">
                                 <div class="input-group">
 									<div class="input-group-addon">
                               			<i class="fa fa-user"></i>
                             		</div>
 									<select class="form-control select2" style="width: 100%;" id="user_id" name="user_id" required>
-                                        <option selected="selected" value="0">*** Select a User ***</option>
+                                        <option selected="selected" value="0">*** Sélectionner un Utilisateur ***</option>
                                         @foreach($users as $user)
                                             <option value="{{ $user->user_id }}">{{ $user->first_name.' '.$user->surname}}</option>
                                         @endforeach
@@ -79,7 +79,7 @@
                      </div>   
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-user-plus"></i> Generate</button>
+                        <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-user-plus"></i> Produire</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

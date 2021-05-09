@@ -4,7 +4,7 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Audit Report</h3>
+                    <h3 class="box-title">Rapport d'audit</h3>
                 </div>
                 <!-- /.box-header -->
 				<form class="form-horizontal" method="POST" action="/audits/print">
@@ -20,11 +20,11 @@
                             <div class="box-body">
 								<table class="table table-striped">
 									<tr>
-										<th>Module Name</th>
-										<th>User</th>
+										<th>Nom du Module</th>
+										<th>Utilisateur</th>
 										<th>Action</th>
-										<th>Action Date</th>
-										<th>Notes</th>
+										<th>Date de L'action</th>
+										<th>Remarques</th>
 									</tr>
 									@if(!empty($audits))
 										@foreach($audits as $audit)
@@ -41,7 +41,7 @@
 								</table>
 								<div class="row no-print">
 									<div class="col-xs-12">
-										<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-print"></i>Print report</button>
+										<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Imprimer le Rapport</button>
 									</div>
 								</div>
 								<!-- End amortization /table -->

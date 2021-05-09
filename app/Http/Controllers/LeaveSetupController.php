@@ -58,16 +58,16 @@ class LeaveSetupController extends Controller {
         $data['page_title'] = "leave Types";
         $data['page_description'] = "leave types";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/types', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
-                ['title' => 'Leave Types ', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/types', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+                ['title' => 'Types de congés', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Leave Types';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Types de Congés';
         $data['leaveTypes'] = $leaveTypes;
         $data['employees'] = $employees;
         $data['leave_customs'] = $leave_customs;
 
-        AuditReportsController::store('Leave Management', 'Leave Type Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Leave Type Page Accessed', "Accessed By User", 0);
 
         return view('leave.leave_types')->with($data);
     }
@@ -75,10 +75,10 @@ class LeaveSetupController extends Controller {
     //#leave allocation
     public function show() {
 
-        $data['page_title'] = "Manage Leave";
-        $data['page_description'] = "Allocate leave types ";
+        $data['page_title'] = "Gérer les Congés";
+        $data['page_description'] = "";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/Allocate_leave_types', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1], ['title' => 'Allocate leave ', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/Allocate_leave_types', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1], ['title' => 'Allocate leave ', 'active' => 1, 'is_module' => 0]
         ];
         $leaveTypes = DB::table('leave_types')->orderBy('name', 'asc')->get();
         $leave_profile = DB::table('leave_profile')->orderBy('name', 'asc')->get();
@@ -96,14 +96,14 @@ class LeaveSetupController extends Controller {
             $leave_customs = $leave_customs->load('userCustom');
 
 
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'Manage Leave';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Gérer les Congés';
         $data['leaveTypes'] = $leaveTypes;
         $data['division_levels'] = $divisionLevels;
         $data['employees'] = $employees;
         $data['leave_credit'] = $leave_credit;
         $data['leave_profile'] = $leave_profile;
-        AuditReportsController::store('Leave Management', 'Leave Management Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Gestion des congés Page Accessed', "Accessed By User", 0);
         return view('leave.leave_allocation')->with($data);
     }
 
@@ -116,13 +116,13 @@ class LeaveSetupController extends Controller {
         $leave_configuration = DB::table('leave_configuration')->where("id", 1)->get()->first();
         $employees = HRPerson::where('status', 1)->get();
 
-        $data['page_title'] = "leave type";
-        $data['page_description'] = "leave set up ";
+        $data['page_title'] = "Type de Congé";
+        $data['page_description'] = "";
         $data['breadcrumb'] = [
-                ['title' => 'Leave Management', 'path' => '/leave/setup', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1], ['title' => 'Setup', 'active' => 1, 'is_module' => 0]
+                ['title' => 'Gestion des congés', 'path' => '/leave/setup', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1], ['title' => 'Setup', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
-        $data['active_rib'] = 'setup';
+        $data['active_mod'] = 'Gestion des congés';
+        $data['active_rib'] = 'Paramètres';
         $data['leave_configuration'] = $leave_configuration;
         $data['leaveTypes'] = $leaveTypes;
         $data['type_profile'] = $type_profile;
@@ -130,7 +130,7 @@ class LeaveSetupController extends Controller {
         if (isset($person['leave_profile'])) {
             $person['leave_profile'] = (int) $person['leave_profile'];
         }
-        AuditReportsController::store('Leave Management', 'Setup Search Page Accessed', "Actioned By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Setup Search Page Accessed', "Actioned By User", 0);
         return view('leave.setup')->with($data);
     }
 
@@ -171,7 +171,7 @@ class LeaveSetupController extends Controller {
             $leave_configuration = new leave_configuration($lateData);
             $leave_configuration->save();
         }
-        AuditReportsController::store('Leave Management', 'leave custom Added', "Actioned Performed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'leave custom Added', "Actioned Performed By User", 0);
         return response()->json();
     }
 
@@ -226,7 +226,7 @@ class LeaveSetupController extends Controller {
 				$credit->save();
 				LeaveHistoryAuditController::store('Added annul leave Days','Annul leave Days', 0 ,($days * 8),($days * 8),$leveTyp, $empID);
 			}
-			AuditReportsController::store('Leave Management', 'leave days adjusted ', "Edited by User");
+			AuditReportsController::store('Gestion des congés', 'leave days adjusted ', "Edited by User");
         }
         return back()->with('success_application', "leave action was successful adjusted.");
     }
@@ -271,7 +271,7 @@ class LeaveSetupController extends Controller {
 			$emp->leave_types()->attach($typID, ['leave_balance' => $resert_days]);
 			//$emp->leave_types()->where('leave_type_id',$typID)->sync([$empID => ['leave_balance' => $resert_days]]);
 
-			AuditReportsController::store('Leave Management', 'leave days reset Edited', "Edited by User: $lev->name", 0);
+			AuditReportsController::store('Gestion des congés', 'leave days reset Edited', "Edited by User: $lev->name", 0);
 			LeaveHistoryAuditController::store('leave days reseted','leave days reseted', 0 ,$resert_days,$resert_days,$typID, $empID);
 		}
         return back()->with('success_application', "leave allocation was successful resert.");
@@ -392,7 +392,7 @@ class LeaveSetupController extends Controller {
 					}
 				}
 			}
-			AuditReportsController::store('Leave Management', 'leave days allocation Edited', "Edited by User: $lev->name", 0);
+			AuditReportsController::store('Gestion des congés', 'leave days allocation Edited', "Edited by User: $lev->name", 0);
 		}
         return back()->with('success_application', "leave allocation was successful.");
     }
@@ -423,7 +423,7 @@ class LeaveSetupController extends Controller {
         ]);
 //
         //return $lev;
-        AuditReportsController::store('Leave Management', 'leave days Informations Edited', "Edited by User: $lev->name", 0);
+        AuditReportsController::store('Gestion des congés', 'leave days Informations Edited', "Edited by User: $lev->name", 0);
         return response()->json();
     }
 
@@ -440,14 +440,14 @@ class LeaveSetupController extends Controller {
 	// upload leave balance
 	public function upload()
     {
-        $data['page_title'] = "Leave Management";
+        $data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Upload Leave From Excel Sheet";
         $data['breadcrumb'] = [
             ['title' => 'Leave', 'path' => '/employee_upload', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1],
             ['title' => 'Leave Balance Upload', 'active' => 1, 'is_module' => 0]
         ];
 		
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Leave Upload';
         AuditReportsController::store('Leave', 'Upload page accessed', "Accessed by User", 0);
         return view('leave.leave_upload')->with($data);
@@ -480,7 +480,7 @@ class LeaveSetupController extends Controller {
 									$credit->save();
 									LeaveHistoryAuditController::store('Added annul leave Days','Annul leave Days', 0 ,($days * 8),($days * 8),1, $employees->id);
 								}
-								AuditReportsController::store('Leave Management', 'leave days adjusted ', "Edited by User");
+								AuditReportsController::store('Gestion des congés', 'leave days adjusted ', "Edited by User");
 							}
 						}
 					}
@@ -491,15 +491,15 @@ class LeaveSetupController extends Controller {
 		}
 		else return back()->with('error_add','Please Upload A File.');
 		
-        $data['page_title'] = "Leave Management";
+        $data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Upload Leave Balance";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Leave Balance', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Appraisals';
-        AuditReportsController::store('Leave Management', "Leave Balance uploaded", "Accessed by User", 0);
+        AuditReportsController::store('Gestion des congés', "Leave Balance uploaded", "Accessed by User", 0);
     }
 	// leave application upload 
 	public function leaveUploadApplications(Request $request)
@@ -816,7 +816,7 @@ class LeaveSetupController extends Controller {
 									// update leave history
 									LeaveHistoryAuditController::store("leave application Approved", '', $leaveBalance, $dayRequested, $newBalance, 6, $employees->id);
 								}
-								AuditReportsController::store('Leave Management', 'leave days adjusted ', "Edited by User");
+								AuditReportsController::store('Gestion des congés', 'leave days adjusted ', "Edited by User");
 							}
 						}
 					}
@@ -827,15 +827,15 @@ class LeaveSetupController extends Controller {
 		}
 		else return back()->with('error_add','Please Upload A File.');
 		
-        $data['page_title'] = "Leave Management";
+        $data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Upload Leave Balance";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Leave Balance', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Appraisals';
-        AuditReportsController::store('Leave Management', "Leave Balance uploaded", "Accessed by User", 0);
+        AuditReportsController::store('Gestion des congés', "Leave Balance uploaded", "Accessed by User", 0);
     }
 	
 	# calculate leave days
@@ -911,7 +911,7 @@ class LeaveSetupController extends Controller {
 									$credit->update();
 									LeaveHistoryAuditController::store('Added annual leave Days Paid','Annual leave Days Paid', 0 ,($days * 8),($days * 8),1, $employees->id);
 								}
-								AuditReportsController::store('Leave Management', 'leave days adjusted ', "Edited by User");
+								AuditReportsController::store('Gestion des congés', 'leave days adjusted ', "Edited by User");
 							}
 						}
 					}
@@ -922,15 +922,15 @@ class LeaveSetupController extends Controller {
 		}
 		else return back()->with('error_add','Please Upload A File.');
 		
-        $data['page_title'] = "Leave Management";
+        $data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Upload Leave Paid Out";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Paid Out', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Upload';
-        AuditReportsController::store('Leave Management', "Leave Balance uploaded", "Accessed by User", 0);
+        AuditReportsController::store('Gestion des congés', "Leave Balance uploaded", "Accessed by User", 0);
     }
 	
 	// upload
@@ -997,7 +997,7 @@ class LeaveSetupController extends Controller {
 										LeaveHistoryAuditController::store('leave days reactivation','leave days reactivation', $previousBalance ,$days,$currentBalance,1,$employees->id);
 									}
 								}
-								AuditReportsController::store('Leave Management', 'leave days adjusted ', "Edited by User");
+								AuditReportsController::store('Gestion des congés', 'leave days adjusted ', "Edited by User");
 							}
 						}
 					}
@@ -1008,14 +1008,14 @@ class LeaveSetupController extends Controller {
 		}
 		else return back()->with('error_add','Please Upload A File.');
 		
-        $data['page_title'] = "Leave Management";
+        $data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Upload Leave Reactivation";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => '/leave/upload', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Leave Reactivation', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Upload';
-        AuditReportsController::store('Leave Management', "Leave Reactivation uploaded", "Accessed by User", 0);
+        AuditReportsController::store('Gestion des congés', "Leave Reactivation uploaded", "Accessed by User", 0);
     }
 }

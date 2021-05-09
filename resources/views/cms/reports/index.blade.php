@@ -16,7 +16,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <i class="fa fa-leanpub pull-right"></i>
-                    <h3 class="box-title">Cms Reports Search</h3>
+                    <h3 class="box-title">Cms Rapports </h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -28,10 +28,10 @@
 
                     <div class="box-body">
                         <div class="form-group{{ $errors->has('allocation_type') ? ' has-error' : '' }}">
-                            <label for="Leave_type" class="col-sm-2 control-label"> Report Type</label>
+                            <label for="Leave_type" class="col-sm-2 control-label"> Type de Raport </label>
                             <div class="col-sm-9">
                                 <label class="radio-inline"><input type="radio" id="rdo_resert" name="allocation_type"
-                                                                   value="1" checked> cms News Rating Report</label>
+                                                                   value="1" checked>Rapport de notation des actualités</label>
                                 <label class="radio-inline"><input type="radio" id="rdo_allocate" name="allocation_type"
                                                                    value="2"> Job Card Report</label>
                             </div>

@@ -22,7 +22,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <i class="fa fa-search"></i>
-                    <h3 class="box-title">Seach News</h3>
+                    <h3 class="box-title">Rechercher des actualités</h3>
                 </div>
                 <form name="leave-application-form" class="form-horizontal" method="POST" action=" "
                       enctype="multipart/form-data">
@@ -47,14 +47,14 @@
                                 <label class="radio-inline" style="padding-left: 0px;"><input type="radio" id="rdo_days"
                                                                                               name="application_type"
                                                                                               value="1" checked> Ceo
-                                    News
+                                    actualités
                                 </label>
                                 <label class="radio-inline"><input type="radio" id="rdo_hours" name="application_type"
-                                                                   value="2"> Company News</label>
+                                                                   value="2"> Actualités</label>
                             </div>
                         </div>
                         <div class="form-group {{ $errors->has('leave_types_id') ? ' has-error' : '' }}">
-                            <label for="days" class="col-sm-2 control-label">Name</label>
+                            <label for="days" class="col-sm-2 control-label">Nom</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control pull-left" id="name" name="name" value=""/>
                             </div>
@@ -66,17 +66,17 @@
 									<div class="input-group-addon">
 										<i class="fa fa-user"></i>
 									</div>
-									<input type="text" class="form-control daterangepicker" id="day" name="day" value="" placeholder="Select Due Date...">
+									<input type="text" class="form-control daterangepicker" id="day" name="day" value="" placeholder="Sélectionner la Date...">
 								</div>
 							</div>
 						</div>
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <button type="button" id="cancel" class="btn btn-primary"><i class="fa fa-arrow-left"></i>
-                                Cancel
+                                Retourner
                             </button>
                             <input type="submit" id="load-allocation" name="load-allocation"
-                                   class="btn btn-primary pull-right" value="Submit">
+                                   class="btn btn-primary pull-right" value="Rechercher">
                         </div>
                         <!-- /.box-footer -->
                     </div>

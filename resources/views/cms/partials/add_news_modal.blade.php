@@ -7,14 +7,14 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Add News </h4>
+                    <h4 class="modal-title">Ajouter des Nouvelles </h4>
                 </div>
                 <div class="modal-body">
                     <div id="invalid-input-alert"></div>
                     <div id="success-alert"></div>
 
                     <div class="form-group">
-                        <label for="path" class="col-sm-2 control-label"> Name</label>
+                        <label for="path" class="col-sm-2 control-label"> Nom</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="name" name="name" value=""
                                    placeholder="Enter Name" required>
@@ -64,7 +64,7 @@
                     @endforeach
 
                     <div class="form-group zip-field">
-                        <label for="image" class="col-sm-2 control-label">Upload a Picture</label>
+                        <label for="image" class="col-sm-2 control-label">Ajouter une Photo</label>
 
                         <div class="col-sm-8">
 
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="term_name" class="col-sm-2 control-label">Summary</label>
+                        <label for="term_name" class="col-sm-2 control-label">Résumé</label>
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <textarea class="form-control" rows="3" cols="70" id="term_name" name="term_name"></textarea>
@@ -84,9 +84,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fermer</button>
                     <button type="button" id="add_news" class="btn btn-primary">
-                        Add News
+                        Sauvegarder
                     </button>
                 </div>
             </form>

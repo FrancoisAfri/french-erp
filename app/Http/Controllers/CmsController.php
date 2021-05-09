@@ -30,13 +30,13 @@ class CmsController extends Controller
         $divisionLevels = DivisionLevel::where('active', 1)->orderBy('id', 'desc')->get();
 
         $data['page_title'] = "CMS";
-        $data['page_description'] = "CMS Settings";
+        $data['page_description'] = "CMS Paramètres";
         $data['breadcrumb'] = [
             ['title' => 'CMS', 'path' => '/News', 'icon' => 'fa fa-handshake-o', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
-        $data['active_rib'] = 'Add Company News';
+        $data['active_mod'] = 'Gestion de contenu';
+        $data['active_rib'] = "Ajouter des nouvelles de l'entreprise";
         $data['Cmsnews'] = $Cmsnews;
         $data['division_levels'] = $divisionLevels;
         
@@ -102,7 +102,7 @@ class CmsController extends Controller
         ];
         $avatar = $Cmsnews->image;
         $data['avatar'] = (!empty($avatar)) ? Storage::disk('local')->url("CMS/images/$avatar") : '';
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'Add Company News';
         $data['Cmsnews'] = $Cmsnews;
         $data['division_levels'] = $divisionLevels;
@@ -184,9 +184,9 @@ class CmsController extends Controller
         $data['page_description'] = "Ceo News";
         $data['breadcrumb'] = [
             ['title' => 'CMS Ceo News', 'path' => '/News', 'icon' => 'fa fa-handshake-o', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'CEO News';
         $data['Ceo_news'] = $Ceo_news;
 
@@ -262,9 +262,9 @@ class CmsController extends Controller
         $data['page_description'] = "Ceo News";
         $data['breadcrumb'] = [
             ['title' => 'CMS Ceo News', 'path' => '/News', 'icon' => 'fa fa-handshake-o', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'CEO News';
         $data['Cmsnews'] = $Cmsnews;
 
@@ -311,9 +311,9 @@ class CmsController extends Controller
         $data['page_description'] = "Company News";
         $data['breadcrumb'] = [
             ['title' => 'CMS Ceo News', 'path' => '/News', 'icon' => 'fa fa-handshake-o', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'CEO News';
         $data['Cmsnews'] = $Cmsnews;
 
@@ -330,9 +330,9 @@ class CmsController extends Controller
         $data['page_description'] = "Company News";
         $data['breadcrumb'] = [
             ['title' => 'CMS Ceo News', 'path' => '/News', 'icon' => 'fa fa-handshake-o', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'CEO News';
         $data['Cmsnews'] = $Cmsnews;
 
@@ -346,9 +346,9 @@ class CmsController extends Controller
         $data['page_description'] = "Search News";
         $data['breadcrumb'] = [
             ['title' => 'CMS Search News', 'path' => '/News', 'icon' => 'fa fa-spinner', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'Search';
 
 
@@ -394,9 +394,9 @@ class CmsController extends Controller
         $data['page_description'] = "CEO Message ";
         $data['breadcrumb'] = [
             ['title' => 'CMS Search News', 'path' => '/News', 'icon' => 'fa fa-spinner', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'Search';
 
         AuditReportsController::store('Content Management', 'Company Ceo Messages Accessed', "Company Accessed", 0);
@@ -440,9 +440,9 @@ class CmsController extends Controller
         $data['page_description'] = "Campony News";
         $data['breadcrumb'] = [
             ['title' => 'CMS Search News', 'path' => '/News', 'icon' => 'fa fa-spinner', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'Search';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);
@@ -519,9 +519,9 @@ class CmsController extends Controller
         $data['page_description'] = "Campony News";
         $data['breadcrumb'] = [
             ['title' => 'Reports', 'path' => '/News', 'icon' => 'fa fa-spinner', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'Reports';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);
@@ -539,9 +539,9 @@ class CmsController extends Controller
         $data['page_description'] = "Campony News";
         $data['breadcrumb'] = [
             ['title' => 'Reports', 'path' => '/News', 'icon' => 'fa fa-spinner', 'active' => 0, 'is_module' => 1],
-            ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
+            ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'Reports';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);
@@ -566,7 +566,7 @@ class CmsController extends Controller
             ['title' => 'Reports', 'path' => '/News', 'icon' => 'fa fa-spinner', 'active' => 0, 'is_module' => 1],
             ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Content Management';
+        $data['active_mod'] = 'Gestion de contenu';
         $data['active_rib'] = 'Reports';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);

@@ -20,8 +20,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <i class="fa fa-user pull-right"></i>
-                    <h3 class="box-title">User</h3>
-                    <p>User details:</p>
+                    <h3 class="box-title">Utilisateur</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -32,7 +31,7 @@
                     <div class="box-body" id="view_users">
                         <hr class="hr-text" data-content="Edit News for - {{ $Cmsnews->name }} ">
                         <div class="form-group">
-                            <label for="path" class="col-sm-2 control-label"> Name</label>
+                            <label for="path" class="col-sm-2 control-label"> Nom</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="name" name="name"
                                        value="{{ $Cmsnews->name  }}"
@@ -81,7 +80,7 @@
                             </div>
                         @endforeach
                         <div class="form-group">
-                            <label for="profile_pic" class="col-sm-2 control-label">Profile Picture</label>
+                            <label for="profile_pic" class="col-sm-2 control-label">Photo</label>
 
                             <div class="col-sm-8">
                                 <div style="margin-bottom: 10px;">

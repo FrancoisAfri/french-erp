@@ -16,7 +16,7 @@
         <div class="col-md-12">
             <div class="box box-warning">
                 <div class="box-header with-border">
-                    <h3 class="box-title"> Company News </h3>
+                    <h3 class="box-title"> Nouvelles de la société </h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-minus"></i></button>
@@ -32,7 +32,7 @@
                             <th style="width: 10px; text-align: center;"></th>
                             <th style="width: 20px; text-align: center;"></th>
                             <th>Date</th>
-                            <th>name</th>
+                            <th>Nom</th>
                             <th>Description</th>
                             <th style="width: 5px; text-align: center;"></th>
                             <th style="width: 5px; text-align: center;"></th>
@@ -43,11 +43,11 @@
                                     <td>
                                         <a href="{{ '/cms/viewnews/' . $news->id }}" id="edit_compan"
                                            class="btn btn-primary  btn-xs" data-id="{{ $news->id }}"><i
-                                                    class="fa fa-pencil-square-o"></i> Edit</a>
+                                                    class="fa fa-pencil-square-o"></i> Éditer</a>
                                     </td>
                                     <td nowrap>
                                         <a href="{{ '/view/' . $news->id }}" id="edit_compan"
-                                           class="btn btn-warning  btn-xs" target="_blank"><i class=""></i> View News
+                                           class="btn btn-warning  btn-xs" target="_blank"><i class=""></i> Voir les actualités
                                         </a>
                                     </td>
                                     <td>{{!empty($news->expirydate) ? date(' d M Y', $news->expirydate) : ''}}</td>
@@ -64,7 +64,7 @@
                                     <td>
                                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal"
                                                 data-target="#delete-contact-warning-modal"><i class="fa fa-trash"></i>
-                                            Delete
+                                            Effacer
                                         </button>
                                     </td>
 
@@ -74,8 +74,8 @@
                             <tr id="categories-list">
                                 <td colspan="7">
                                     <div class="callout callout-danger">
-                                        <h4><i class="fa fa-database"></i> No Records found</h4>
-                                        <p>No Records found. Please start by adding a Record.</p>
+                                        <h4><i class="fa fa-database"></i> Aucun Enregistrement Trouvé</h4>
+                                        <p>Aucun enregistrement trouvé. Veuillez commencer par ajouter un enregistrement.</p>
                                     </div>
                                 </td>
                             </tr>
@@ -84,9 +84,9 @@
                     <!--   </div> -->
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="button" class="btn btn-default pull-left" id="back_button">Back</button>
+                        <button type="button" class="btn btn-default pull-left" id="back_button">retourner</button>
                         <button type="button" id="cat_module" class="btn btn-warning pull-right" data-toggle="modal"
-                                data-target="#add-news-modal">Add news
+                                data-target="#add-news-modal">Ajouter des Actualités
                         </button>
                     </div>
                 </div>
@@ -193,8 +193,8 @@
                     var modalID = 'add-news-modal';
                     var submitBtnID = 'add_news';
                     var redirectUrl = '/cms/viewnews';
-                    var successMsgTitle = 'New Record Details Added!';
-                    var successMsg = 'New Crm News has been Added successfully.';
+                    var successMsgTitle = 'Nouveaux détails d'enregistrement ajoutés!';
+                    var successMsg = 'Nouvelles nouvelles ont été ajoutées avec succès.';
                     for (instance in CKEDITOR.instances) {
                         CKEDITOR.instances[instance].updateElement();
                     }

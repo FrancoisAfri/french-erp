@@ -47,6 +47,7 @@ class DashboardController extends Controller
 
     public function index()
     {
+		
         $loggedInEmplID = Auth::user()->person->id;
 
         $data['breadcrumb'] = [
@@ -429,8 +430,8 @@ class DashboardController extends Controller
             $data['canViewTaskWidget'] = $canViewTaskWidget;
             $data['canViewEmpRankWidget'] = $canViewEmpRankWidget;
             $data['divisionLevels'] = $divisionLevels;
-            $data['page_title'] = "Dashboard";
-            $data['page_description'] = "This is your main Dashboard";
+            $data['page_title'] = "Tableau de bord";
+            $data['page_description'] = "";
 
             return view('dashboard.admin_dashboard')->with($data); //Admin Dashboard
         } else {

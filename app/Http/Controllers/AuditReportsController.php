@@ -31,15 +31,15 @@ class AuditReportsController extends Controller
 	
 	public function index()
     {
-        $data['page_title'] = "Audit Report";
-        $data['page_description'] = "Audit Report";
+        $data['page_title'] = "Rapport d'audit";
+        $data['page_description'] = "";
         $data['breadcrumb'] = [
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1],
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
-            ['title' => 'Audit Report', 'active' => 1, 'is_module' => 0]
+            ['title' => "Rapport d'audit", 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Audit';
-        $data['active_rib'] = 'Audit Report';
+        $data['active_rib'] = "Rapport d'audit";
 		
 		$modules = DB::table('security_modules')->where('active', 1)->orderBy('name', 'asc')->get();
 		$users = DB::table('hr_people')->where('status', 1)->orderBy('first_name', 'asc')->get();
@@ -113,15 +113,15 @@ class AuditReportsController extends Controller
         $data['user_id'] = $request->user_id;
         $data['action_date'] = $request->action_date;
         $data['audits'] = $audits;
-		$data['page_title'] = "Audit Report";
-        $data['page_description'] = "Audit Report";
+		$data['page_title'] = "Rapport d'audit";
+        $data['page_description'] = "";
         $data['breadcrumb'] = [
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1],
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
-            ['title' => 'Audit Report', 'active' => 1, 'is_module' => 0]
+            ['title' => "Rapport d'audit", 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Audit';
-        $data['active_rib'] = 'Audit Report';
+        $data['active_rib'] = "Rapport d'audit";
 	
 		AuditReportsController::store('Audit', 'View Audit Search Results', "view Audit Results", 0);
         return view('audit.audit_results')->with($data);
@@ -169,15 +169,15 @@ class AuditReportsController extends Controller
 		$companyDetails = CompanyIdentity::systemSettings();
 
         $data['audits'] = $audits;   
-        $data['page_title'] = "Audit Report";
-        $data['page_description'] = "Audit Report";
+        $data['page_title'] = "Rapport d'auditt";
+        $data['page_description'] = "";
         $data['breadcrumb'] = [
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1],
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Audit Report', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Audit';
-        $data['active_rib'] = 'Audit Report';
+        $data['active_rib'] = "Rapport d'audit";
 		$user = Auth::user()->load('person');
 		
 		$data['support_email'] = $companyDetails['support_email'];

@@ -18,7 +18,7 @@
                     {{ csrf_field() }}
                    
                     <div class="box-header with-border">
-                        <h3 class="box-title">Company News </h3>
+                        <h3 class="box-title">Nouvelles de la société </h3>
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                         class="fa fa-minus"></i></button>
@@ -45,9 +45,9 @@
                             <tr>
                                 <th style="vertical-align: middle; text-align: center;"></th>
                                 <th style="vertical-align: middle; text-align: center;"></th>
-                                <th> Name</th>
+                                <th> Nom</th>
                                 <th> Description</th>
-                                <th>Expiry Date</th>
+                                <th>Date d'expiration</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -56,7 +56,7 @@
                                     <td style="vertical-align: middle;"
                                         nowrap>
                                         <a href="{{ '/view/' . $news->id }}" id="edit_compan"
-                                           class="btn btn-primary  btn-xs" target="_blank"><i class=""></i> View Details
+                                           class="btn btn-primary  btn-xs" target="_blank"><i class=""></i> Voir les détails
                                         </a>
                                     </td>
                                     <td style="vertical-align: middle;" nowrap>
@@ -79,17 +79,16 @@
                             <tr>
                                 <th style="vertical-align: middle; text-align: center;"></th>
                                 <th style="vertical-align: middle; text-align: center;"></th>
-                                <th> Name</th>
+                                <th> Nom</th>
                                 <th> Description</th>
-                                <th>Expiry Date</th>
-                            </tr>
+                                <th>Date d'expiration</th>
                             </tfoot>
                         </table>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <button type="button" id="cancel" class="btn btn-default pull-left"><i
-                                    class="fa fa-arrow-left"></i> Back
+                                    class="fa fa-arrow-left"></i> Retourner
                         </button>
 
                     </div>
@@ -99,7 +98,7 @@
 
         <!-- Include modal -->
         @if(Session('changes_saved'))
-            @include('contacts.partials.success_action', ['modal_title' => "Company Identity Updated!", 'modal_content' => session('changes_saved')])
+            @include('contacts.partials.success_action', ['modal_title' => "Identité de l'entreprise mise à jour!", 'modal_content' => session('changes_saved')])
         @endif
     </div>
 @endsection

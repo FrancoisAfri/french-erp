@@ -10,9 +10,9 @@
                 <p>{{ $modal_content }}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Non</button>
                 <a href="{{ '/cms/news/' . $news->id . '/delete' }}"
-                   class="btn btn-outline">Yes</a>
+                   class="btn btn-outline">Oui</a>
             </div>
         </div>
         <!-- /.modal-content -->

@@ -31,7 +31,7 @@
                         <tr>
                             <th style="width: 10px; text-align: center;"></th>
                             <th style="width: 20px; text-align: center;"></th>
-                            <th>name</th>
+                            <th>Nom</th>
                             <th>Description</th>
                             <th style="width: 5px; text-align: center;"></th>
                             <th style="width: 5px; text-align: center;"></th>
@@ -42,11 +42,11 @@
                                     <td>
                                         <a href="{{ '/cms/editCeonews/' . $news->id }}" id="edit_compan"
                                            class="btn btn-primary  btn-xs" data-id="{{ $news->id }}"><i
-                                                    class="fa fa-pencil-square-o"></i> Edit</a>
+                                                    class="fa fa-pencil-square-o"></i> Éditer</a>
                                     </td>
                                     <td nowrap>
                                         <a href="{{ '/viewceo/' . $news->id }}" id="edit_compan"
-                                           class="btn btn-warning  btn-xs" target="_blank"><i class=""></i> View News
+                                           class="btn btn-warning  btn-xs" target="_blank"><i class=""></i> Voir les actualités
                                         </a>
                                     </td>
                                     <td>{{ !empty($news->name) ? $news->name : ''}}</td>
@@ -62,7 +62,7 @@
                                     <td>
                                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal"
                                                 data-target="#delete-contact-warning-modal"><i class="fa fa-trash"></i>
-                                            Delete
+                                            Effacer
                                         </button>
                                     </td>
 
@@ -72,8 +72,8 @@
                             <tr id="categories-list">
                                 <td colspan="7">
                                     <div class="callout callout-danger">
-                                        <h4><i class="fa fa-database"></i> No Records found</h4>
-                                        <p>No Records found. Please start by adding a Record.</p>
+                                        <h4><i class="fa fa-database"></i> Aucun enregistrement trouvé</h4>
+                                        <p>Aucun enregistrement trouvé. Veuillez commencer par ajouter un enregistrement.</p>
                                     </div>
                                 </td>
                             </tr>
@@ -82,9 +82,9 @@
                     <!--   </div> -->
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="button" class="btn btn-default pull-left" id="back_button">Back</button>
+                        <button type="button" class="btn btn-default pull-left" id="back_button">Retourner</button>
                         <button type="button" id="cat_module" class="btn btn-warning pull-right" data-toggle="modal"
-                                data-target="#add-news-modal">Add news
+                                data-target="#add-news-modal">Ajouter des actualités
                         </button>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
 
         <!-- Include delete warning Modal form-->
             @if (count($Ceo_news) > 0)
-                @include('cms.partials.ceo_news_warning_action', ['modal_title' => 'Delete Record', 'modal_content' => 'Are you sure you want to delete this Record? This action cannot be undone.'])
+                @include('cms.partials.ceo_news_warning_action', ['modal_title' => 'Delete Record', 'modal_content' => 'Êtes-vous sûr de vouloir supprimer cet enregistrement? Cette action ne peut pas être annulée.'])
             @endif
         </div>
         @endsection

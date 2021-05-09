@@ -82,16 +82,16 @@ class LeaveApplicationController extends Controller
         $data['employees'] = $employees;
         $data['leave_customs'] = $leave_customs;
 		
-		$data['page_title'] = "leave Management";
+		$data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Leave Application";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => '/leave/Apply', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => '/leave/Apply', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Leave Application', 'active' => 1, 'is_module' => 0]
         ];
-		$data['active_mod'] = 'Leave Management';
+		$data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Apply';
 
-        AuditReportsController::store('Leave Management', 'Leave Type Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Leave Type Page Accessed', "Accessed By User", 0);
         return view('leave.application')->with($data);
     }
 	
@@ -111,10 +111,10 @@ class LeaveApplicationController extends Controller
 
     public function show()
     {
-        $data['page_title'] = "leave Management";
+        $data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Leave Approvals";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => 'leave/approval', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => 'leave/approval', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'leave Approval', 'active' => 1, 'is_module' => 0]
         ];
 		$loggedInEmplID = Auth::user()->person->id;
@@ -163,13 +163,13 @@ class LeaveApplicationController extends Controller
             ->get();
 		
 		$data['leaveStatus'] = $leaveStatus;
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Approval';
         $data['leaveTypes'] = $leaveTypes;
         $data['leaveApplications'] = $leaveApplications;
         $data['subLeaveApplications'] = $subLeaveApplications;
 
-        AuditReportsController::store('Leave Management', 'Leave Approval Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Leave Approval Page Accessed', "Accessed By User", 0);
         return view('leave.leave_approval')->with($data);
     }
 
@@ -433,7 +433,7 @@ class LeaveApplicationController extends Controller
 		if (!empty($ApplicationDetails['email']))
 			Mail::to($ApplicationDetails['email'])->send(new leave_applications($ApplicationDetails['first_name'], $leaveTypes->name, $ApplicationDetails['email'], $username));
 
-        AuditReportsController::store('Leave Management', 'Leave day application', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Leave day application', "Accessed By User", 0);
         #leave history audit
         LeaveHistoryAuditController::store("Leave application submitted by : $username", '', $leaveBalance, $dayRequested, $leaveBalance, $levtype, $hrID);
         return back()->with('success_application', "leave application was successful.");
@@ -550,7 +550,7 @@ class LeaveApplicationController extends Controller
 			Mail::to($ApplicationDetails['email'])->send(new leave_applications($ApplicationDetails['first_name'], $leaveTypes->name, $ApplicationDetails['email'], $username));
 
 		#$action='',$descriptionAction ='',$previousBalance='',$transcation='' ,$currentBalance ='',$leave_type ='')
-        AuditReportsController::store('Leave Management', 'Leave hours application ', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Leave hours application ', "Accessed By User", 0);
         LeaveHistoryAuditController::store("Hours leave application submitted by : $username", 0, $leave_balance, 0, $leave_balance, $typID, $employees);
         return back()->with('success_application', "leave application was successful.");
     }
@@ -559,7 +559,7 @@ class LeaveApplicationController extends Controller
     {
 		if (!empty($leave)) $leave = $leave->load('person','manager','leavetpe');
 		
-		AuditReportsController::store('Leave Management', 'Leave Application Printed', "Accessed By User");
+		AuditReportsController::store('Gestion des congés', 'Leave Application Printed', "Accessed By User");
 		$companyDetails = CompanyIdentity::systemSettings();
 		$companyName = $companyDetails['company_name'];
 		$user = Auth::user()->load('person');
@@ -634,7 +634,7 @@ class LeaveApplicationController extends Controller
 			LeaveHistoryAuditController::store("leave application Approved", '', $leaveBalance, $daysApplied, $newBalance, $leaveId->leave_type_id, $leaveId->hr_id);
         }
 		
-		AuditReportsController::store('Leave Management', 'leave_approval Informations accepted', "Edited by User: $leaveId->hr_id", 0);
+		AuditReportsController::store('Gestion des congés', 'leave_approval Informations accepted', "Edited by User: $leaveId->hr_id", 0);
         return back()->with('success_application', "leave application was successful.");
     }
 
@@ -659,7 +659,7 @@ class LeaveApplicationController extends Controller
         $levReject->update();
         #send rejection email
 		Mail::to($email)->send(new LeaveRejection($firstname, $surname, $email));
-        AuditReportsController::store('Leave Management: ', 'leave rejected', "By User", 0);
+        AuditReportsController::store('Gestion des congés: ', 'leave rejected', "By User", 0);
         LeaveHistoryAuditController::store("leave application Rejected", 0, 0, 0, 0, $levReject->leave_type_id, $manager_id);
         return response()->json();
     }
@@ -674,16 +674,16 @@ class LeaveApplicationController extends Controller
 		$data['leaveTypes'] = $leaveTypes;
         $data['employees'] = $employees;
 		
-		$data['page_title'] = "leave Management";
+		$data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Leave Application Cancellation";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => '/leave/search', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => '/leave/search', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Leave Application', 'active' => 1, 'is_module' => 0]
         ];
-		$data['active_mod'] = 'Leave Management';
+		$data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Search';
 
-        AuditReportsController::store('Leave Management', 'Leave Type Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Leave Type Page Accessed', "Accessed By User", 0);
         return view('leave.cancellation')->with($data);   
     }
 	// cancel approved applicatiion
@@ -748,22 +748,22 @@ class LeaveApplicationController extends Controller
 		
 		$data['leaveStatus'] = $leaveStatus;
 		$data['applications'] = $applications;
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Search';
-		$data['page_title'] = "leave Management";
+		$data['page_title'] = "Gestion des congés";
         $data['page_description'] = "Leave Cancellation";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => 'leave/search', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => 'leave/search', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'leave Approval', 'active' => 1, 'is_module' => 0]
         ];
-        AuditReportsController::store('Leave Management', 'Leave Approval Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store('Gestion des congés', 'Leave Approval Page Accessed', "Accessed By User", 0);
         return view('leave.leave_cancel')->with($data);
     }
 	// View Leave Application
 	public function viewLeaveApplication(leave_application $leave)
     {
 		if (!empty($leave)) $leave = $leave->load('person','manager','leavetpe','canceller');
-		AuditReportsController::store('Leave Management', 'Leave Application Printed', "Accessed By User");
+		AuditReportsController::store('Gestion des congés', 'Leave Application Printed', "Accessed By User");
 		$leaveStatus = array(1 => 'Approved', 2 => 'Require managers approval ', 3 => 'Require department head approval', 4 => 'Require hr approval', 5 => 'Require payroll approval', 6 => 'rejected', 7 => 'rejectd_by_department_head', 8 => 'rejectd_by_hr', 9 => 'rejectd_by_payroll', 10 => 'Cancelled');
 		//
 		$currentUserID = Auth::user()->id;
@@ -777,12 +777,12 @@ class LeaveApplicationController extends Controller
 		$data['leave'] = $leave;
 		$data['leaveStatus'] = $leaveStatus;
 		$data['isAdmin'] = $isAdmin;
-        $data['active_mod'] = 'Leave Management';
+        $data['active_mod'] = 'Gestion des congés';
         $data['active_rib'] = 'Search';
-		$data['page_title'] = "leave Management";
+		$data['page_title'] = "Gestion des congés";
         $data['page_description'] = "View Application";
         $data['breadcrumb'] = [
-            ['title' => 'Leave Management', 'path' => 'leave/search', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => 'Gestion des congés', 'path' => 'leave/search', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'leave Approval', 'active' => 1, 'is_module' => 0]
         ];
 		return view('leave.view_application')->with($data);

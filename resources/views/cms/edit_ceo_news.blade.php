@@ -34,7 +34,7 @@
                         <hr class="hr-text" data-content="Edit Ceo News for - {{ $Cmsnews->name }} ">
 
                         <div class="form-group">
-                            <label for="path" class="col-sm-2 control-label"> Name</label>
+                            <label for="path" class="col-sm-2 control-label"> Nom</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="name" name="name"
                                        value="{{ $Cmsnews->name  }}"
@@ -51,7 +51,7 @@
                             </div>
                         </div>
 						<div class="form-group zip-field">
-							<label for="image" class="col-sm-2 control-label">Upload a Picture</label>
+							<label for="image" class="col-sm-2 control-label">Photo</label>
 							<div class="col-sm-8">
 								@if(!empty($Cmsnews->image))
 									<img src="{{ Storage::disk('local')->url("CMS/images/$Cmsnews->image") }}" width="200" height="170">

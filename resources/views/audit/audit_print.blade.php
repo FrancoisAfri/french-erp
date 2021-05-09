@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Audit Report Printed By {{ $user->person->first_name.' '. $user->person->surname }}</title>
+  <title>Rapport d'audit imprimé par {{ $user->person->first_name.' '. $user->person->surname }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -55,11 +55,11 @@
 			<div class="box-body">
 				<table class="table table-striped">
 					<tr>
-						<th>Module Name</th>
-						<th>User</th>
+						<th>Nom du Module</th>
+						<th>Utilisateur</th>
 						<th>Action</th>
-						<th>Action Date</th>
-						<th>Notes</th>
+						<th>Date de L'action</th>
+						<th>Remarques</th>
 					</tr>
 					@if(count($audits) > 0)
 						@foreach($audits as $audit)

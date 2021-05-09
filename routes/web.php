@@ -28,8 +28,6 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-Route::get('view/{id}', 'CmsController@view');
-Route::get('viewceo/{viewceo}', 'CmsController@viewceo');
 
 #cms ratings
 Route::get('rate/{id}/{cmsID}', 'CmsController@cmsratings');
@@ -1118,6 +1116,8 @@ Route::get('crm/document_act/{type}', 'ContactsController@docActivate');
 Route::get('crm/reports', 'CRMAccountController@crmreportIndex');
 
 // CMS
+Route::get('view/{id}', 'CmsController@view');
+Route::get('viewceo/{viewceo}', 'CmsController@viewceo');
 Route::get('cms/viewnews', 'CmsController@addnews');
 Route::post('cms/crm_news', 'CmsController@addcmsnews');
 Route::get('cms/viewnews/{news}', 'CmsController@viewnews');

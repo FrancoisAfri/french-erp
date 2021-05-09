@@ -35,7 +35,7 @@
                                 </li>
                                 <li>|</li>
                                 {{--<span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>--}}
-                                <li>| <b>Please Rate This Article</b></li>
+                                <li>| <b>Veuillez noter cet article</b></li>
                                 <li>
                                     @if (!empty($Cmsnews->cmsRankings->first()->rating_1) && $Cmsnews->cmsRankings->first()->rating_1 == 1)
                                         <a href="{{ '/rate/1/' . $Cmsnews->id }}" id="rate_cms"

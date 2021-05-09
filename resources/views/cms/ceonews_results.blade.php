@@ -18,7 +18,7 @@
                     {{ csrf_field() }}
                    
                     <div class="box-header with-border">
-                        <h3 class="box-title">Ceo Message(s)</h3>
+                        <h3 class="box-title">Message du PDG</h3>
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                         class="fa fa-minus"></i></button>
@@ -44,7 +44,7 @@
                             <thead>
                             <tr>
                                 <th style="vertical-align: middle; text-align: center;"></th>
-                                <th> Name</th>
+                                <th> Nom</th>
                                 <th>Description</th>
                                 <th>Date</th>
                             </tr>
@@ -71,7 +71,7 @@
                             <tfoot>
                             <tr>
                                 <th style="vertical-align: middle; text-align: center;"></th>
-                                <th> Name</th>
+                                <th> Nom</th>
                                 <th>Description</th>
                                 <th>Date</th>
                             </tr>
@@ -81,7 +81,7 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <button type="button" id="cancel" class="btn btn-default pull-left"><i
-                                    class="fa fa-arrow-left"></i> Back
+                                    class="fa fa-arrow-left"></i> Retourner
                         </button>
 
                     </div>
