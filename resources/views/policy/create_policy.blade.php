@@ -29,10 +29,10 @@
 						<table class="table table-bordered">
 							<tr>
 								<th style="width: 10px; text-align: center;"></th>
-								<th>Category</th>
-								<th>Name</th>
+								<th>Categorie</th>
+								<th>Nom</th>
 								<th>Description</th>
-								<th>Completion date</th>
+								<th>Date d'achèvement</th>
 								<th style="width: 5px; text-align: center;"></th>
 								<th style="width: 5px; text-align: center;"></th>
 								<th style="width: 5px; text-align: center;"></th>
@@ -50,7 +50,7 @@
 													data-date="{{ date(' d M Y', $policy->date)}}"
 													data-doc_link="{{ Storage::disk('local')->url("Policies/policy/$policy->document") }}}}"
 											><i
-														class="fa fa-pencil-square-o"></i> Edit
+														class="fa fa-pencil-square-o"></i> Éditer
 											</button>
 										</td>
 										<td>{{ (!empty( $policy->policyCategory->name)) ?  $policy->policyCategory->name : ''}} </td>
@@ -72,16 +72,16 @@
 												@if(!empty($policy->document))
 													<a class="btn btn-default btn-flat btn-block pull-right btn-xs"
 													   href="{{ Storage::disk('local')->url("Policies/policy/$policy->document") }}"
-													   target="_blank"><i class="fa fa-file-pdf-o"></i> View Document</a>
+													   target="_blank"><i class="fa fa-file-pdf-o"></i> Afficher le document</a>
 												@else
 													<a class="btn btn-default pull-centre btn-xs"><i
-																class="fa fa-exclamation-triangle"></i> Nothing Uploaded</a>
+																class="fa fa-exclamation-triangle"></i> Pas de Document</a>
 												@endif
 											</div>
 										</td>
 										<td nowrap>
 											<a href="{{ '/system/policy/viewUsers/' . $policy->id }}" id="policy_users"
-											   class="btn btn-primary  btn-xs"><i class="fa fa-user"> </i> View Users</a>
+											   class="btn btn-primary  btn-xs"><i class="fa fa-user"> </i> Afficher les utilisateurs</a>
 										</td>
 										</td>
 									</tr>
@@ -93,7 +93,7 @@
 											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
 												&times;
 											</button>
-											No Policies to display, please start by adding a new policy ...
+											Aucune politique à afficher, veuillez commencer par ajouter une nouvelle politique ...
 										</div>
 									</td>
 								</tr>
@@ -103,9 +103,9 @@
                     <!--   </div> -->
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="button" class="btn btn-default pull-left" id="back_button">Back</button>
+                        <button type="button" class="btn btn-default pull-left" id="back_button">Retourner</button>
                         <button type="button" id="cat_module" class="btn btn-warning pull-right" data-toggle="modal"
-                                data-target="#add-policy-modal">Create Policy
+                                data-target="#add-policy-modal">Ajouter
                         </button>
                     </div>
                 </div>

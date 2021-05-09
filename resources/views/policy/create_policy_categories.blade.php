@@ -15,7 +15,7 @@
         <div class="col-ms-9">
             <div class="box box-warning">
                 <div class="box-header with-border">
-                    <h3 class="box-title"> Policy Categpries</h3>
+                    <h3 class="box-title">Categpries</h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-minus"></i></button>
@@ -28,7 +28,7 @@
 						<table class="table table-bordered">
 							<tr>
 								<th style="width: 5px; text-align: center;">#</th>
-								<th>Name</th>
+								<th>Nom</th>
 								<th>Description</th>
 							</tr>
 							@if (count($categories) > 0)
@@ -46,7 +46,7 @@
 											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
 												&times;
 											</button>
-											No Policies to display, please start by adding a new category ...
+											Aucune catégorie à afficher, veuillez commencer par ajouter une nouvelle catégorie ...
 										</div>
 									</td>
 								</tr>

@@ -46,7 +46,7 @@
                             <div class="col-sm-9">
                                 <label class="radio-inline" style="padding-left: 0px;"><input type="radio" id="rdo_days"
                                                                                               name="application_type"
-                                                                                              value="1" checked> Ceo
+                                                                                              value="1" checked> PDG
                                     actualités
                                 </label>
                                 <label class="radio-inline"><input type="radio" id="rdo_hours" name="application_type"

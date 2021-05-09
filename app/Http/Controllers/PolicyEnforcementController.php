@@ -37,10 +37,10 @@ class PolicyEnforcementController extends Controller
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]
         ];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Add Policy';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Ajouter un Règlement';
         $data['categories'] = $categories;
-        AuditReportsController::store('Policy Enforcement', 'Policy Enforcement Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Enforcement Page Accessed', "Accessed By User", 0);
 
         return view('policy.create_policy_categories')->with($data);
     }
@@ -66,8 +66,8 @@ class PolicyEnforcementController extends Controller
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]
         ];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Add Policy';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Ajouter un Règlement';
         $data['policyCat'] = $policyCat;
         $data['employees'] = $employees;
         $data['policies'] = $policies;
@@ -75,7 +75,7 @@ class PolicyEnforcementController extends Controller
         $data['ContactCompany'] = $ContactCompany;
         $data['DivisionLevelFive'] = $DivisionLevelFive;
         $data['categories'] = $categories;
-        AuditReportsController::store('Policy Enforcement', 'Policy Enforcement Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Enforcement Page Accessed', "Accessed By User", 0);
 
         return view('policy.create_policy')->with($data);
     }
@@ -118,7 +118,7 @@ class PolicyEnforcementController extends Controller
                 $policy->update();
             }
         }
-        AuditReportsController::store('Policy Enforcement', "New Policy Created Policy Name: $policy->name", "Added By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", "New Policy Created Policy Name: $policy->name", "Added By User", 0);
 //        // get users
         $DivOne = DivisionLevel::where('level', 1)->orderBy('id', 'desc')->first();
         $DivTwo = DivisionLevel::where('level', 2)->orderBy('id', 'desc')->first();
@@ -154,7 +154,7 @@ class PolicyEnforcementController extends Controller
             $firstname = $hrID->first_name;
             $surname = $hrID->surname;
             $email = $hrID->email;
-            AuditReportsController::store('Policy Enforcement', "New User Added: $hrID->first_name $hrID->surname To Policy: $policy->name", "Added By User", 0);
+            AuditReportsController::store("Règles de l'entreprise", "New User Added: $hrID->first_name $hrID->surname To Policy: $policy->name", "Added By User", 0);
             #mail to user
             Mail::to($email)->send(new createPolicy($firstname, $surname, $email));
         }
@@ -172,7 +172,7 @@ class PolicyEnforcementController extends Controller
         }
         $pol->status = $stastus;
         $pol->update();
-        AuditReportsController::store('Policy Enforcement', 'Policy Status Changed', "Changed  to $label For Policy: $pol->name", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Status Changed', "Changed  to $label For Policy: $pol->name", 0);
         return back();
     }
 
@@ -192,7 +192,7 @@ class PolicyEnforcementController extends Controller
         $data['page_title'] = "Policy Library";
         $data['page_description'] = "Policy Library";
         $data['breadcrumb'] = [
-            ['title' => 'Policy Enforcement', 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => "Règles de l'entreprise", 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]
         ];
         $policyID = $users->id;
@@ -202,9 +202,9 @@ class PolicyEnforcementController extends Controller
         $data['employees'] = $employees;
         $data['division_levels'] = $divisionLevels;
         $data['policyUsers'] = $policyUsers;
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Add Policy';
-        AuditReportsController::store('Policy Enforcement', 'View Policy Page Accessed', "Accessedessed By User.", 0);
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Ajouter un Règlement';
+        AuditReportsController::store("Règles de l'entreprise", 'View Policy Page Accessed', "Accessedessed By User.", 0);
         return view('policy.users_list_access')->with($data);
     }
 
@@ -242,7 +242,7 @@ class PolicyEnforcementController extends Controller
             }
         }
 
-        AuditReportsController::store('Policy Enforcement', 'Edit Policy Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Edit Policy Page Accessed', "Accessed By User", 0);
         return response()->json();
     }
 
@@ -259,7 +259,7 @@ class PolicyEnforcementController extends Controller
         $user = HRPerson::where('id', $policyUser->user_id)->first();
         $policyUser->status = $stastus;
         $policyUser->update();
-        AuditReportsController::store('Policy Enforcement', "Policy User Status Changed", "Changed  to $label For User: $user->first_name $user->surname", 0);
+        AuditReportsController::store("Règles de l'entreprise", "Policy User Status Changed", "Changed  to $label For User: $user->first_name $user->surname", 0);
         return back();
     }
 
@@ -318,7 +318,7 @@ class PolicyEnforcementController extends Controller
                 Mail::to($email)->send(new createPolicy($firstname, $surname, $email));
             }
         }
-        AuditReportsController::store('Policy Enforcement', 'New User Added to Policy', "Added By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'New User Added to Policy', "Added By User", 0);
         return response()->json();
     }
 
@@ -349,19 +349,19 @@ class PolicyEnforcementController extends Controller
         $data['page_title'] = "Policy Library";
         $data['page_description'] = "Policy Library";
         $data['breadcrumb'] = [
-            ['title' => 'Policy Enforcement', 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
+            ['title' => "Règles de l'entreprise", 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]
         ];
 
         $data['policyUsers'] = $policyUsers;
         $data['policies'] = $policies;
        // $data['policy'] = $policy;
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'My Policies';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Mon Fichier';
         $data['modules'] = $modules;
         $data['division_levels'] = $divisionLevels;
 
-        AuditReportsController::store('Policy Enforcement', 'View Policies Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'View Policies Page Accessed', "Accessed By User", 0);
         return view('policy.policy_list_access')->with($data);
     }
 
@@ -392,7 +392,7 @@ class PolicyEnforcementController extends Controller
                 $policyUsers->date_read = time();
                 $policyUsers->update();
                 $policyName = Policy::where('id', $policyID)->first();
-                AuditReportsController::store('Policy Enforcement', 'Policy Status Updated', "Status Changed to: $accessLevelLabel on Policy: $policyName->name", 0);
+                AuditReportsController::store("Règles de l'entreprise", 'Policy Status Updated', "Status Changed to: $accessLevelLabel on Policy: $policyName->name", 0);
             }
         }
         return back();
@@ -408,11 +408,11 @@ class PolicyEnforcementController extends Controller
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]
         ];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Search Policies';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rechercher';
         $data['categories'] = $categories;
 
-        AuditReportsController::store('Policy Enforcement', 'Policy Search Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Search Page Accessed', "Accessed By User", 0);
         return view('policy.policy_search')->with($data);
     }
 
@@ -460,10 +460,10 @@ class PolicyEnforcementController extends Controller
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]
         ];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Search Policies';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rechercher';
 
-        AuditReportsController::store('Policy Enforcement', 'Policy Document Search Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Document Search Page Accessed', "Accessed By User", 0);
         return view('policy.policyDoc_results')->with($data);
     }
 	//
@@ -485,10 +485,10 @@ class PolicyEnforcementController extends Controller
         $data['breadcrumb'] = [['title' => 'Policy Library', 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Search Policies';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rechercher';
 
-        AuditReportsController::store('Policy Enforcement', 'Policy Users Details Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Users Details Page Accessed', "Accessed By User", 0);
         return view('policy.view_policy_details')->with($data);
     }
 	// read Policies
@@ -505,10 +505,10 @@ class PolicyEnforcementController extends Controller
         $data['breadcrumb'] = [['title' => 'Policy Library', 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Read Policy ', 'active' => 1, 'is_module' => 0]];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'My Policies';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Mon Fichier';
 
-        AuditReportsController::store('Policy Enforcement', "$user->policy->name Policy Viewed", "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", "$user->policy->name Policy Viewed", "Accessed By User", 0);
         return view('policy.read_policy')->with($data);
     }
 	//
@@ -526,12 +526,12 @@ class PolicyEnforcementController extends Controller
 
         $data['division_levels'] = $divisionLevels;
         $data['policy'] = $policy;
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rapports';
         
 		$data['categories'] = $categories;
 
-        AuditReportsController::store('Policy Enforcement', 'Policy Reports Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Reports Page Accessed', "Accessed By User", 0);
         return view('policy.reports_search')->with($data);
     }
 
@@ -580,10 +580,10 @@ class PolicyEnforcementController extends Controller
         $data['breadcrumb'] = [['title' => 'Policy Library', 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rapports';
 
-        AuditReportsController::store('Policy Enforcement', 'Policy Reports Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Reports Page Accessed', "Accessed By User", 0);
         return view('policy.reportsResults_search')->with($data);
     }
 
@@ -615,10 +615,10 @@ class PolicyEnforcementController extends Controller
         $data['breadcrumb'] = [['title' => 'Policy Library', 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rapports';
 
-        AuditReportsController::store('Policy Enforcement', 'Policy Users Details Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Users Details Page Accessed', "Accessed By User", 0);
         return view('policy.viewdetails_search')->with($data);
 
     }
@@ -651,10 +651,10 @@ class PolicyEnforcementController extends Controller
         $data['breadcrumb'] = [['title' => 'Policy Library', 'path' => '/System/policy/create', 'icon' => 'fa fa-lock', 'active' => 0, 'is_module' => 1],
             ['title' => 'Manage Policy Library ', 'active' => 1, 'is_module' => 0]];
 
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rapports';
 
-        AuditReportsController::store('Policy Enforcement', 'Policy Users Details Page Accessed', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Policy Users Details Page Accessed', "Accessed By User", 0);
         return view('policy.viewuserdetails')->with($data);
 
     }
@@ -686,21 +686,21 @@ class PolicyEnforcementController extends Controller
         $companyDetails = CompanyIdentity::systemSettings();
         $companyName = $companyDetails['company_name'];
 
-        $data['page_title'] = "Policy Enforcement Report";
+        $data['page_title'] = "Règles de l'entreprise Report";
         $data['page_description'] = "Policy Enforcement Report";
         $data['breadcrumb'] = [
-            ['title' => 'Policy Enforcement', 'path' => '/System/policy/create', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
+            ['title' => "Règles de l'entreprise", 'path' => '/System/policy/create', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 1], //  ['title' => 'Leave History Audit', 'path' => '/leave/Leave_History_Audit', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Policy Users', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Policy Enforcement';
-        $data['active_rib'] = 'Reports';
+        $data['active_mod'] = "Règles de l'entreprise";
+        $data['active_rib'] = 'Rapports';
         $user = Auth::user()->load('person');
         $data['support_email'] = $companyDetails['support_email'];
         $data['company_name'] = $companyName;
         $data['full_company_name'] = $companyDetails['full_company_name'];
         $data['company_logo'] = url('/') . $companyDetails['company_logo_url'];
         $data['date'] = date("d-m-Y");
-        AuditReportsController::store('Policy Enforcement', 'Printed Policy Users Report Results', "Printed by Users", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Printed Policy Users Report Results', "Printed by Users", 0);
         return view('policy.users_print')->with($data);
     }
 
@@ -730,7 +730,7 @@ class PolicyEnforcementController extends Controller
 
             }
         }
-        AuditReportsController::store('Policy Enforcement', 'Email Sent to Users', "Accessed By User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Email Sent to Users', "Accessed By User", 0);
         return back();
     }
 	
@@ -741,14 +741,14 @@ class PolicyEnforcementController extends Controller
         $data['page_title'] = "Categories";
         $data['page_description'] = "Manage Categories";
         $data['breadcrumb'] = [
-            ['title' => 'Policy Enforcement', 'path' => '/policy/category', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1],
+            ['title' => "Règles de l'entreprise", 'path' => '/policy/category', 'icon' => 'fa fa-users', 'active' => 0, 'is_module' => 1],
             ['title' => 'Manage Categories', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Policy Enforcement';
+        $data['active_mod'] = "Règles de l'entreprise";
         $data['active_rib'] = 'Categories';
         $data['Categories'] = $Categories;
 		//return $data;
-		AuditReportsController::store('Policy Enforcement', 'Categories Page Accessed', "Actioned By User", 0);
+		AuditReportsController::store("Règles de l'entreprise", 'Categories Page Accessed', "Actioned By User", 0);
         return view('policy.categories')->with($data);
     }
 
@@ -778,7 +778,7 @@ class PolicyEnforcementController extends Controller
 		$category->description = $categoryData['description'];
         $category->save();
 		$newname = $categoryData['name'];
-		AuditReportsController::store('Policy Enforcement', 'Category Added', "Category Name: $categoryData[name]", 0);
+		AuditReportsController::store("Règles de l'entreprise", 'Category Added', "Category Name: $categoryData[name]", 0);
 		return response()->json(['new_category' => $newname], 200);
     }	
 	public function editCategory(Request $request, Policy_Category $category)
@@ -792,7 +792,7 @@ class PolicyEnforcementController extends Controller
         $category->description = $request->input('description');
         $category->update();
 		$newtemplate = $request->input('name');
-        AuditReportsController::store('Policy Enforcement', 'Category Informations Edited', "Edited by User", 0);
+        AuditReportsController::store("Règles de l'entreprise", 'Category Informations Edited', "Edited by User", 0);
         return response()->json(['new_category' => $newtemplate], 200);
     }
 }

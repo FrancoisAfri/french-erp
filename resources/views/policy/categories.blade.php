@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Categories</h3>
+                    <h3 class="box-title">Catégories</h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -14,12 +14,12 @@
                 <!-- /.box-header -->
                 <div class="box-body">
 				<table class="table table-bordered">
-					 <tr><th style="width: 10px"></th><th>Name</th><th>Description</th><th style="width: 40px"></th></tr>
+					 <tr><th style="width: 10px"></th><th>Nom</th><th>Description</th><th style="width: 40px"></th></tr>
                     @if (count($Categories) > 0)
 						@foreach($Categories as $Category)
 						 <tr id="categories-list">
 						  <td nowrap>
-								<button type="button" id="edit_category" class="btn btn-primary  btn-xs" data-toggle="modal" data-target="#edit-category-modal" data-id="{{ $Category->id }}" data-name="{{ $Category->name }}" data-description="{{ $Category->description }}"><i class="fa fa-pencil-square-o"></i> Edit</button>
+								<button type="button" id="edit_category" class="btn btn-primary  btn-xs" data-toggle="modal" data-target="#edit-category-modal" data-id="{{ $Category->id }}" data-name="{{ $Category->name }}" data-description="{{ $Category->description }}"><i class="fa fa-pencil-square-o"></i> Éditer</button>
                           </td>
 						  <td>{{ $Category->name }} </td>
 						  <td>{{ $Category->description }} </td>
@@ -33,7 +33,7 @@
 						<td colspan="5">
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            No category to display, please start by adding a new category.
+                            Aucune catégorie à afficher, veuillez commencer par ajouter une nouvelle catégorie.
                         </div>
 						</td>
 						</tr>
@@ -42,7 +42,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button type="button" id="add-new-category" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add-new-category-modal">Add Category</button>
+                    <button type="button" id="add-new-category" class="btn btn-primary pull-right" data-toggle="modal" data-target="#add-new-category-modal">Ajouter une catégorie</button>
                 </div>
             </div>
         </div>

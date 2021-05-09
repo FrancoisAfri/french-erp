@@ -6,7 +6,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Add More Users </h4>
+                    <h4 class="modal-title">Ajouter plus d'utilisateurs </h4>
                 </div>
                 <div class="modal-body">
                     <div id="invalid-input-alert"></div>
@@ -26,11 +26,11 @@
                         </div>
                     @endforeach
                     <div class="form-group {{ $errors->has('hr_person_id') ? ' has-error' : '' }}">
-                        <label for="hr_person_id" class="col-sm-2 control-label">Employees</label>
+                        <label for="hr_person_id" class="col-sm-2 control-label">Employés</label>
                         <div class="col-sm-8">
                                 <select class="form-control select2" multiple="multiple" style="width: 100%;"
                                         id="hr_person_id" name="hr_person_id[]">
-                                    {{--<option value="">*** Select an Employee ***</option>--}}
+                                    {{--<option value="">*** Sélectionnez un employé ***</option>--}}
                                     @foreach($employees as $employee)
                                         <option value="{{ $employee->id }}">{{ $employee->first_name . ' ' . $employee->surname }}</option>
                                     @endforeach
@@ -39,13 +39,11 @@
                     </div>
                     <input type="hidden" id="policyID" name="policyID"
                            value="{{ !empty($policyID) ? $policyID : ''}}">
-
-
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Fermer</button>
                     <button type="button" id="add-user" class="btn btn-warning"><i class="fa fa-cloud-upload"></i>
-                        Save
+                        Sauvegarder
                     </button>
                 </div>
             </form>
