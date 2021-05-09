@@ -38,7 +38,7 @@ class AuditReportsController extends Controller
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => "Rapport d'audit", 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Audit';
+        $data['active_mod'] = "Gestion de l'audit";
         $data['active_rib'] = "Rapport d'audit";
 		
 		$modules = DB::table('security_modules')->where('active', 1)->orderBy('name', 'asc')->get();
@@ -120,7 +120,7 @@ class AuditReportsController extends Controller
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => "Rapport d'audit", 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Audit';
+        $data['active_mod'] = "Gestion de l'audit";
         $data['active_rib'] = "Rapport d'audit";
 	
 		AuditReportsController::store('Audit', 'View Audit Search Results', "view Audit Results", 0);
@@ -176,7 +176,7 @@ class AuditReportsController extends Controller
             ['title' => 'Audit', 'path' => '/audit/reports', 'icon' => 'fa fa-eye', 'active' => 0, 'is_module' => 0],
             ['title' => 'Audit Report', 'active' => 1, 'is_module' => 0]
         ];
-        $data['active_mod'] = 'Audit';
+        $data['active_mod'] = "Gestion de l'audit";
         $data['active_rib'] = "Rapport d'audit";
 		$user = Auth::user()->load('person');
 		
