@@ -36,7 +36,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = "Ajouter des nouvelles de l'entreprise";
+        $data['active_rib'] = "Ajouter des nouvelles";
         $data['Cmsnews'] = $Cmsnews;
         $data['division_levels'] = $divisionLevels;
         
@@ -103,7 +103,7 @@ class CmsController extends Controller
         $avatar = $Cmsnews->image;
         $data['avatar'] = (!empty($avatar)) ? Storage::disk('local')->url("CMS/images/$avatar") : '';
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'Add Company News';
+        $data['active_rib'] = 'Ajouter des nouvelles';
         $data['Cmsnews'] = $Cmsnews;
         $data['division_levels'] = $divisionLevels;
         $data['hrDetails'] = $hrDetails;
@@ -187,7 +187,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'CEO News';
+        $data['active_rib'] = 'Nouvelles du PDG';
         $data['Ceo_news'] = $Ceo_news;
 
         AuditReportsController::store('Content Management', 'Company Ceo News Accessed', "Company News Content Management Accessed", 0);
@@ -265,7 +265,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'CEO News';
+        $data['active_rib'] = 'Nouvelles du PDG';
         $data['Cmsnews'] = $Cmsnews;
 
         AuditReportsController::store('Content Management', 'Company Ceo News Accessed', "Company Ceo News Content  Accessed", 0);
@@ -314,7 +314,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'CEO News';
+        $data['active_rib'] = 'Nouvelles du PDG';
         $data['Cmsnews'] = $Cmsnews;
 
         AuditReportsController::store('Content Management', 'Company Ceo News Accessed', "Company Ceo News Content  Accessed", 0);
@@ -333,7 +333,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'CEO News';
+        $data['active_rib'] = 'Nouvelles du PDG';
         $data['Cmsnews'] = $Cmsnews;
 
         AuditReportsController::store('Content Management', 'Company Ceo News Accessed', "Company Ceo News Content  Accessed", 0);
@@ -349,7 +349,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'Search';
+        $data['active_rib'] = 'Rechercher';
 
 
         AuditReportsController::store('Content Management', 'Company Search Accessed', "Company Search Accessed", 0);
@@ -397,7 +397,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'Search';
+        $data['active_rib'] = 'Rechercher';
 
         AuditReportsController::store('Content Management', 'Company Ceo Messages Accessed', "Company Accessed", 0);
         return view('cms.ceonews_results')->with($data);
@@ -443,7 +443,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'Search';
+        $data['active_rib'] = 'Rechercher';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);
         return view('cms.camponynews_results')->with($data);
@@ -522,7 +522,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'Reports';
+        $data['active_rib'] = 'Rapports';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);
         return view('cms.reports.search_results')->with($data);
@@ -542,7 +542,7 @@ class CmsController extends Controller
             ['title' => 'Gestion de contenu', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'Reports';
+        $data['active_rib'] = 'Rapports';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);
         return view('cms.reports.search_results')->with($data);
@@ -567,7 +567,7 @@ class CmsController extends Controller
             ['title' => 'Content Management', 'active' => 1, 'is_module' => 0]
         ];
         $data['active_mod'] = 'Gestion de contenu';
-        $data['active_rib'] = 'Reports';
+        $data['active_rib'] = 'Rapports';
 
         AuditReportsController::store('Content Management', 'Company News search page Accessed', "Company search page Accessed", 0);
         return view('cms.partials.new_ratings')->with($data);
